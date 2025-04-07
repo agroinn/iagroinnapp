@@ -28,10 +28,7 @@
   text-decoration: none;
   padding: 0;
 }
-.back-button:hover {
-  text-decoration: underline;
-  color: #ccc;
-}
+
     .back-button::before {
       content: "←";
       margin-right: 18px;
@@ -60,7 +57,7 @@
 <body>
 
   <div class="container">
-    <button class="back-button" onclick="history.back()">Назад</button>
+    <button class="back-button" type="button" onclick="history.back()">Назад</button>
 
     <h1>Лицензионный договор-оферта<br>о предоставлении права использования ПО</h1>
 
