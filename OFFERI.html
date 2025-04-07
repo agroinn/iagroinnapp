@@ -14,35 +14,36 @@
     }
 
     .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  height: 60px; /* Задаём высоту, чтобы разместить элементы внутри */
   margin-bottom: 30px;
 }
 
 .back-button {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  align-self: flex-start;
   color: white;
   font-size: 18px;
   text-decoration: none;
   cursor: pointer;
-  padding-left: 20px;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+.back-button::before {
+  content: "← ";
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   max-height: 50px;
 }
-
-    .logo {
-      max-height: 50px;
-    }
-
     .back-button {
       color: white;
       font-size: 18px;
@@ -101,9 +102,11 @@
 <body>
 
   <div class="header">
-    <a class="back-button" onclick="history.back()">Назад</a>
+  <a class="back-button" onclick="history.back()">Назад</a>
+  <div class="logo-wrapper">
     <img src="Дизайн без названия.png" alt="Логотип" class="logo">
   </div>
+</div>
 
   <h1>Условия соглашения</h1>
 
