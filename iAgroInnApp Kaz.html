@@ -152,11 +152,53 @@
     <h2>2-қадам</h2>
     <p>Машина климаттық жағдайларды, өсімдік дақылын және сіздің қажеттіліктеріңізді ескере отырып, топырақтың физикалық, химиялық және биологиялық жағдайларын автоматты түрде бағалайтын болады</p>
     <h2>3-қадам</h2>
-    <p>Сіз аласыз түсті карта түріндегі интерпретация, мұндағы:<br>
-    қызыл түс - қиын жағдай<br>
-    сары түс - назар аударуды қажет етеді<br>
-    жасыл түс - бәрі жақсы</p>
-    <h2>4-қадам</h2>
+    <style>
+  .legend {
+    font-family: sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .red { background-color: #fd514b; }
+  .yellow { background-color: #fbfa03; }
+  .green { background-color: #339969; }
+</style>
+
+<div>
+  <p>Сіз аласыз түсті карта түріндегі интерпретация, мұндағы:</p>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color red"></div>
+      <div>қызыл түс - қиын жағдай</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color yellow"></div>
+      <div>сары түс - назар аударуды қажет етеді</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color green"></div>
+      <div>жасыл түс - бәрі жақсы</div>
+    </div>
+  </div>
+</div>
+
+      <h2>4-қадам</h2>
     <p>Жасанды интеллект және халықаралық ғылыми консорциум, оның ішінде агрономдар, топырақ ғалымдары, агрохимиктер, биологтар, гидрологтар және Ресей, Қазақстан және басқа да елдердің басқа да мамандары сіздің өніміңізге қандай шектеулер қауіп төндіретінін және оларды қалай жою керектігін көрсетеді</p>
   </div>
 
