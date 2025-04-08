@@ -148,13 +148,14 @@
     <h2>Шаг 2</h2>
     <p>Машина автоматически оценит физические, химические и биологические состояния почв с учетом климатических условий, культуры растений и ваших потребностей.</p>
     <h2>Шаг 3</h2>
-  <style>
+ <style>
   .legend {
+    font-family: sans-serif;
+    font-size: 14px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-family: sans-serif;
-    font-size: 14px;
+    margin-top: 8px;
   }
 
   .legend-item {
@@ -175,18 +176,21 @@
   .green { background-color: #339969; }
 </style>
 
-<div class="legend">
-  <div class="legend-item">
-    <div class="legend-color red"></div>
-    <div>Критичная ситуация</div>
-  </div>
-  <div class="legend-item">
-    <div class="legend-color yellow"></div>
-    <div>Требует внимания</div>
-  </div>
-  <div class="legend-item">
-    <div class="legend-color green"></div>
-    <div>Всё хорошо</div>
+<div>
+  <p>Вы получаете интерпретацию в виде цветной карты, где:</p>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color red"></div>
+      <div>красный цвет — критичная ситуация</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color yellow"></div>
+      <div>жёлтый цвет — требует внимания</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color green"></div>
+      <div>зелёный цвет — всё хорошо</div>
+    </div>
   </div>
 </div>
 
