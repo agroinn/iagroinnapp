@@ -148,10 +148,48 @@
     <h2>Шаг 2</h2>
     <p>Машина автоматически оценит физические, химические и биологические состояния почв с учетом климатических условий, культуры растений и ваших потребностей.</p>
     <h2>Шаг 3</h2>
-    <p>Вы получаете интерпретацию в виде цветной карты, где:<br>
-      красный цвет — критичная ситуация<br>
-      желтый цвет — требует внимания<br>
-      зеленый цвет — всё хорошо</p>
+  <style>
+  .legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .red { background-color: #fd514b; }
+  .yellow { background-color: #fbfa03; }
+  .green { background-color: #339969; }
+</style>
+
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-color red"></div>
+    <div>Критичная ситуация</div>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color yellow"></div>
+    <div>Требует внимания</div>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color green"></div>
+    <div>Всё хорошо</div>
+  </div>
+</div>
+
     <h2>Шаг 4</h2>
     <p>Искусственный интеллект и международный научный консорциум, включающий агрономов, почвоведов, агрохимиков, биологов, гидрологов и других специалистов из России, Казахстана и других стран, показывают, какие ограничения угрожают вашему урожаю и как их устранить.</p>
   </div>
