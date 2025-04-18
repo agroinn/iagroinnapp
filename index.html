@@ -142,8 +142,8 @@
         }
      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кнопка для Казахстана</title>
-       }
+    <title>Кнопки для Казахстана и России</title>
+    }
   </style>
 </head>
 <body>
@@ -205,37 +205,43 @@
             <p>✔ Подготовка подробной цифровой модели почвенного, биогеографического и климатического состояния <span style="color: green;">(реализуется в первый год)</span></p>
             <p>✔ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
             <p>Стоимость за один участок:<p> 
-            <button id="kazakhstan-btn">Республика Казахстан</button>
-    <div id="kazakhstan-info" style="display: none;">
-        <h3 style="font-size: 24px;">12 500 тг в первый год</h3>
-        <p style="font-size: 16px;">6000 тг со второго года</p>
+            <!-- Кнопки -->
+    <button id="kazakhstan-btn">Республика Казахстан</button>
+    <button id="russia-btn">Российская Федерация</button>
+    
+    <!-- Блок с информацией -->
+    <div id="info-block" style="display: none;">
+        <h3 id="info-title" style="font-size: 24px;"></h3>
+        <p id="info-text" style="font-size: 16px;"></p>
     </div>
 
     <script>
-        document.getElementById('kazakhstan-btn').addEventListener('click', function () {
-            const info = document.getElementById('kazakhstan-info');
-            if (info.style.display === 'none') {
-                info.style.display = 'block'; // Показываем блок
-            } else {
-                info.style.display = 'none'; // Скрываем блок
+        // Функция для отображения информации
+        function showInfo(country) {
+            const infoBlock = document.getElementById('info-block');
+            const title = document.getElementById('info-title');
+            const text = document.getElementById('info-text');
+
+            // Устанавливаем текст в зависимости от выбранной страны
+            if (country === 'kazakhstan') {
+                title.textContent = '12 500 тг в первый год';
+                text.textContent = '6000 тг со второго года';
+            } else if (country === 'russia') {
+                title.textContent = '2500 руб в первый год';
+                text.textContent = '1250 руб со второго года';
             }
+
+            // Показываем блок информации
+            infoBlock.style.display = 'block';
+        }
+
+        // События для кнопок
+        document.getElementById('kazakhstan-btn').addEventListener('click', function () {
+            showInfo('kazakhstan');
         });
-    </script>
-        </div>
-<button id="kazakhstan-btn">Российская Федерация</button>
-    <div id="kazakhstan-info" style="display: none;">
-        <h3 style="font-size: 24px;">2500 руб в первый год</h3>
-        <p style="font-size: 16px;">1250 руб со второго года</p>
-    </div>
 
-    <script>
-        document.getElementById('kazakhstan-btn').addEventListener('click', function () {
-            const info = document.getElementById('kazakhstan-info');
-            if (info.style.display === 'none') {
-                info.style.display = 'block'; // Показываем блок
-            } else {
-                info.style.display = 'none'; // Скрываем блок
-            }
+        document.getElementById('russia-btn').addEventListener('click', function () {
+            showInfo('russia');
         });
     </script>
         </div>
