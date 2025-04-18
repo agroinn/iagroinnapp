@@ -140,6 +140,10 @@
         .tab-content.active {
             display: block;
         }
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопка для Казахстана</title>
+       }
   </style>
 </head>
 <body>
@@ -201,8 +205,22 @@
             <p>✔ Подготовка подробной цифровой модели почвенного, биогеографического и климатического состояния <span style="color: green;">(реализуется в первый год)</span></p>
             <p>✔ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
             <p>Стоимость за один участок:<p> 
-            <h3 style="font-size: 24px;">12 500 тг в первый год</h3>
-            <p style="font-size: 16px;">6000 тг со второго года</p>
+            <button id="kazakhstan-btn">Республика Казахстан</button>
+    <div id="kazakhstan-info" style="display: none;">
+        <h3 style="font-size: 24px;">12 500 тг в первый год</h3>
+        <p style="font-size: 16px;">6000 тг со второго года</p>
+    </div>
+
+    <script>
+        document.getElementById('kazakhstan-btn').addEventListener('click', function () {
+            const info = document.getElementById('kazakhstan-info');
+            if (info.style.display === 'none') {
+                info.style.display = 'block'; // Показываем блок
+            } else {
+                info.style.display = 'none'; // Скрываем блок
+            }
+        });
+    </script>
         </div>
 
         <div id="partner" class="tab-content">
