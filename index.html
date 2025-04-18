@@ -137,6 +137,106 @@
       Нажимая на кнопку, я принимаю <a href="OFFERI.html">условия соглашения</a>
     </p>
   </div>
+
+<!-- Plan Selection -->
+  <div class="plan-section container">
+    <h2>Выберите план</h2>
+    <div class="plan-buttons">
+      <button class="active" data-country="kaz">Республика Казахстан</button>
+      <button data-country="rus">Российская Федерация</button>
+    </div>
+    <div class="pricing-grid" id="kaz-pricing">
+      <div class="pricing-card">
+        <h3>Одногодовой контракт</h3>
+        <div class="price">12 500 ₸</div>
+        <ul>
+          <li>Первый год: 12 500 ₸</li>
+          <li>Продление ежегодно: 6 000 ₸</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>4-летний контракт</h3>
+        <div class="price">от 37 000 ₸</div>
+        <ul>
+          <li>Первый год: от 37 000 ₸</li>
+          <li>2–4 годы: от 30 000 ₸/год</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-grid" id="rus-pricing" style="display:none;">
+      <div class="pricing-card">
+        <h3>Одногодовой контракт</h3>
+        <div class="price">6 400 ₽</div>
+        <ul>
+          <li>Первый год: от 6 400 ₽</li>
+          <li>Продление ежегодно: от 5 100 ₽</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>4-летний контракт</h3>
+        <div class="price">от 19 200 ₽</div>
+        <ul>
+          <li>Первый год: от 19 200 ₽</li>
+          <li>2–4 годы: от 15 300 ₽/год</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="container white-section">
+    <h2>Как это работает?</h2>
+    <div class="tabs">
+      <button class="active" data-tab="start">AgroInn Start</button>
+      <button data-tab="advisor">Агросоветник</button>
+      <button data-tab="partner">AgroInn Partner</button>
+    </div>
+    <div id="start" class="tab-content active">
+      <h3>AgroInn Start</h3>
+      <ol>
+         <h2>Шаг 1</h2>
+        <li>Вы предоставляете кадастровый номер ваших сельхозугодий.</li>
+         <h2>Шаг 2</h2>
+        <li>Система генерирует цифровую почвенную карту и делит поле на участки.</li>
+         <h2>Шаг 3</h2>
+        <li>Сервис измеряет показатели почвы и интерпретирует данные.</li>
+         <h2>Шаг 4</h2>
+        <li>Отображение состояния участков цветной картой.</li>
+         <h2>Шаг 5</h2>
+        <li>Дополнение данных для улучшения точности.</li>
+      </ol>
+    </div>
+    <div id="advisor" class="tab-content">
+      <h3>Агросоветник</h3>
+      <ol>
+         <h2>Шаг 1</h2>
+        <li>Предоставьте всю доступную информацию (кадастр, техника, анализы).</li>
+         <h2>Шаг 2</h2>
+        <li>Сервис формирует подробную цифровую модель и почвенную карту.</li>
+         <h2>Шаг 3</h2>
+        <li>Анализ всех физических, химических и биологических данных.</li>
+         <h2>Шаг 4</h2>
+        <li>Отображение состояния цветной картой.</li>
+         <h2>Шаг 5</h2>
+        <li>ИИ и консорциум разрабатывают стратегии устранения ограничений.</li>
+         <h2>Шаг 6</h2>
+        <li>Пошаговые рекомендации на сезон с учётом долгосрочных планов.</li>
+      </ol>
+    </div>
+    <div id="partner" class="tab-content">
+      <h3>AgroInn Partner</h3>
+      <ol>
+        <li>Все шаги пакета Агросоветник.</li>
+         <h2>Шаг 7</h2>
+        <li>Полный анализ состояния почв в 1 и 3 годы.</li>
+         <h2>Шаг 8</h2>
+        <li>Ежегодная комплексная оценка плодородия.</li>
+         <h2>Шаг 9</h2>
+        <li>Годовая листовая диагностика.</li>
+      </ol>
+    </div>
+  </div>
+
   
   <div class="white-section">
     <h2>Как это работает?</h2>
@@ -214,6 +314,42 @@
     </p>
   </div>
 
+<!-- What you get -->
+  <div class="container white-section">
+    <h2>Что вы получаете?</h2>
+    <div class="tabs">
+      <button class="active" data-tab="benefits-start">AgroInn Start</button>
+      <button data-tab="benefits-advisor">Агросоветник</button>
+      <button data-tab="benefits-partner">AgroInn Partner</button>
+    </div>
+    <div id="benefits-start" class="tab-content active">
+      <ul>
+        <li>Группа почв по справочной базе и её значение.</li>
+        <li>Физические показатели на глубинах 0–5 до 100–200 см.</li>
+        <li>Химический состав почв (азот, углерод, pH и др.).</li>
+        <li>Интеграция новых почвенных данных.</li>
+      </ul>
+    </div>
+    <div id="benefits-advisor" class="tab-content">
+      <ul>
+        <li>Все возможности пакета Start.</li>
+        <li>Влияние осадочных пород на свойства почв.</li>
+        <li>Анализ климатических изменений за 20 лет.</li>
+        <li>Данные по осадкам и влагоемкости.</li>
+        <li>Рекомендации на основе рельефа и климата.</li>
+      </ul>
+    </div>
+    <div id="benefits-partner" class="tab-content">
+      <ul>
+        <li>Все возможности пакета Агросоветник.</li>
+        <li>Расширенный анализ химического и биологического состояния.</li>
+        <li>Годовая диагностика и гидрологические карты.</li>
+        <li>Комплексная оценка устойчивости и плодородия.</li>
+      </ul>
+    </div>
+  </div>
+
+  
   <div class="white-section">
     <h2>Что вы получаете?</h2>
   </div>
