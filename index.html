@@ -222,7 +222,23 @@
         });
     </script>
         </div>
+<button id="kazakhstan-btn">Российская Федерация</button>
+    <div id="kazakhstan-info" style="display: none;">
+        <h3 style="font-size: 24px;">2500 руб в первый год</h3>
+        <p style="font-size: 16px;">1250 руб со второго года</p>
+    </div>
 
+    <script>
+        document.getElementById('kazakhstan-btn').addEventListener('click', function () {
+            const info = document.getElementById('kazakhstan-info');
+            if (info.style.display === 'none') {
+                info.style.display = 'block'; // Показываем блок
+            } else {
+                info.style.display = 'none'; // Скрываем блок
+            }
+        });
+    </script>
+        </div>
         <div id="partner" class="tab-content">
             <h3>AgroInn Partner</h3>
             <p>✔ Картография любого количества полей с делением на участки по примерно 25 га (богара) и 5 га (полив)</p>
