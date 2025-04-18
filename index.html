@@ -109,8 +109,8 @@
   <header class="logo">
     <img src="Дизайн без названия.png" alt="Логотип AgroInn" width="220">
     <div class="language-switch">
-      <button onclick="location.href='iAgroInnApp html.txt'">Rus</button>
-      <button onclick="location.href='iAgroInnApp Kaz.txt'">Kaz</button>
+      <button onclick="location.href='index.html'">Rus</button>
+      <button onclick="location.href='iAgroInnApp Kaz.html'">Kaz</button>
     </div>
   </header>
 
@@ -130,117 +130,13 @@
 <div class="container">
     <h2 style="text-align: center;">Скачать демоверсию</h2>
     <div class="download-btns">
-      <a href="#"><img src="google-play.png" alt="Google Play"></a>
-      <a href="#"><img src="app-store.png" alt="App Store"></a>
+      <a href="#"><img src="images/Google Play.png" alt="Google Play"></a>
+      <a href="#"><img src="images/Appstore.png" alt="App Store"></a>
     </div>
     <p class="agreement-text">
-      Нажимая на кнопку, я принимаю <a href="OFFERI.txt">условия соглашения</a>
+      Нажимая на кнопку, я принимаю <a href="OFFERI.html">условия соглашения</a>
     </p>
   </div>
-
-  <div class="white-section">
-    <h2>Выберите план</h2>
-  </div>
-
-<div class="button-group">
-  <button type="button" class="btn toggle-btn active" id="btn-kz">Республика Казахстан</button>
-  <button type="button" class="btn toggle-btn" id="btn-ru">Российская Федерация</button>
-</div>
-
-  <div id="table-kz" class="table-responsive">
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>AgroInn Start</th>
-          <th> </th>
-          <th>Агросоветник/Агрокеңесші</th>
-          <th>AgroInn Partner</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1 поле</td>
-          <td>Картография полей с делением на участки по примерно 25 га (богара) и 5 га (полив)</td>
-          <td>+</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>Оценка, интерпретация и интеграция новых почвенных данных в карту</td>
-          <td>+</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>Подготовка подробной цифровой модели почвенного, биогеографического и климатического состояния (реализуется в первый год)</td>
-          <td>+</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>Пошаговые рекомендации (весна, лето, осень, зима)</td>
-          <td>+</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>Проведение полного анализа физического, химического и биологического состояния почв в первый и третий годы</td>
-          <td>−</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>Ежегодная листовая диагностика (зольный метод) для контроля питания, мониторинга усвоения элементов и корректировки планов</td>
-          <td>−</td>
-          <td>На выбор</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>Создание цифровой карты мелкозалегающих грунтовых вод (до 2 м) для оценки влияния на корневую зону, планирования дренажа и управления водным режимом</td>
-          <td>−</td>
-          <td>На выбор</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>Ежегодная комплексная оценка плодородии и устойчивости пахотных почв с учётом погодных условий</td>
-          <td>−</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>Бесплатно</td>
-          <td>Стоимость за один элементарный участок (25 га – богара или 5 га – полив)</td>
-          <td>12 500 тг в первый год;<br>– 6 000 тг ежегодно при продлении</td>
-          <td>4-летний контракт:<br>– первый год от 37 000 тг; (от 6 400 ₽)<br>– второй, третий и четвёртый годы от 30 000 тг в год. (от 5 100 ₽ в год)</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-<!-- Таблица для России (скрыта по умолчанию) -->
-
-
-<script>
-  const btnKZ = document.getElementById('btn-kz');
-  const btnRU = document.getElementById('btn-ru');
-  const tblKZ = document.getElementById('table-kz');
-  const tblRU = document.getElementById('table-ru');
-
-  btnKZ.addEventListener('click', () => {
-    tblKZ.style.display = '';
-    tblRU.style.display = 'none';
-    btnKZ.classList.add('active');
-    btnRU.classList.remove('active');
-  });
-
-  btnRU.addEventListener('click', () => {
-    tblRU.style.display = '';
-    tblKZ.style.display = 'none';
-    btnRU.classList.add('active');
-    btnKZ.classList.remove('active');
-  });
-</script>
-
   
   <div class="white-section">
     <h2>Как это работает?</h2>
@@ -252,10 +148,52 @@
     <h2>Шаг 2</h2>
     <p>Машина автоматически оценит физические, химические и биологические состояния почв с учетом климатических условий, культуры растений и ваших потребностей.</p>
     <h2>Шаг 3</h2>
-    <p>Вы получаете интерпретацию в виде цветной карты, где:<br>
-      красный цвет — критичная ситуация<br>
-      желтый цвет — требует внимания<br>
-      зеленый цвет — всё хорошо</p>
+ <style>
+  .legend {
+    font-family: sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .red { background-color: #fd514b; }
+  .yellow { background-color: #fbfa03; }
+  .green { background-color: #339969; }
+</style>
+
+<div>
+  <p>Вы получаете интерпретацию в виде цветной карты, где:</p>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color red"></div>
+      <div>красный цвет — критичная ситуация</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color yellow"></div>
+      <div>жёлтый цвет — требует внимания</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color green"></div>
+      <div>зелёный цвет — всё хорошо</div>
+    </div>
+  </div>
+</div>
+
     <h2>Шаг 4</h2>
     <p>Искусственный интеллект и международный научный консорциум, включающий агрономов, почвоведов, агрохимиков, биологов, гидрологов и других специалистов из России, Казахстана и других стран, показывают, какие ограничения угрожают вашему урожаю и как их устранить.</p>
   </div>
@@ -268,11 +206,11 @@
   <div class="container">
     <h2 style="text-align: center;">Скачать демоверсию</h2>
     <div class="download-btns">
-      <a href="#"><img src="google-play.png" alt="Google Play"></a>
-      <a href="#"><img src="app-store.png" alt="App Store"></a>
+      <a href="#"><img src="images/Google Play.png" alt="Google Play"></a>
+      <a href="#"><img src="images/Appstore.png" alt="App Store"></a>
     </div>
     <p class="agreement-text">
-      Нажимая на кнопку, я принимаю <a href="OFFERI.txt">условия соглашения</a>
+      Нажимая на кнопку, я принимаю <a href="OFFERI.html">условия соглашения</a>
     </p>
   </div>
 
@@ -316,11 +254,10 @@
   <footer class="white-section" style="text-align: center;">
     <p>Следите за нами:</p>
     <p>
-      <a href="https://www.facebook.com/share/1FdxvBPoDt/"><img src="Facebook" alt="Facebook"></a>
-      <a href="https://www.instagram.com/oljaszhanybekov?igsh=MTV0YWQ2YTE0NDAzaw=="><img src="Instagram" alt="Instagram"></a>
-      <a href="https://www.linkedin.com/in/oljas-zhanybekov-02934365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="Linkedin" alt="LinkedIn"></a>
+      <a href="https://www.facebook.com/share/1FdxvBPoDt/"><img src="images/Facebook.png" alt="Facebook"></a>
+<a href="https://www.instagram.com/oljaszhanybekov?igsh=MTV0YWQ2YTE0NDAzaw=="><img src="images/Instagram.png" alt="Instagram"></a>
+<a href="https://www.linkedin.com/in/oljas-zhanybekov-02934365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="images/Linkedin.png" alt="LinkedIn"></a>
     </p>
   </footer>
 </body>
 </html>
-<!-- Пожалуйста, вставьте сюда исходный код вашего сайта для дальнейшей доработки -->
