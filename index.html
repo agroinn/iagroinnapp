@@ -189,9 +189,9 @@
 
     <div class="container">
         <div class="tariff-tabs">
-            <button class="tab-button active" onclick="openTab('start')">AgroInn Start</button>
-            <button class="tab-button" onclick="openTab('agrosovietnik')">Агросоветник</button>
-            <button class="tab-button" onclick="openTab('partner')">AgroInn Partner</button>
+          <button class="tab-button active" onclick="openTab('start', event)">AgroInn Start</button>
+          <button class="tab-button" onclick="openTab('agrosovietnik', event)">Агросоветник</button>
+          <button class="tab-button" onclick="openTab('partner', event)">AgroInn Partner</button>
         </div>
 
         <div id="start" class="tab-content active">
@@ -411,20 +411,16 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
   </footer>
 </body>
    <script>
-        function openTab(tabName) {
-            const tabContents = document.querySelectorAll('.tab-content');
-            const tabButtons = document.querySelectorAll('.tab-button');
+        function openTab(tabName, event) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabButtons = document.querySelectorAll('.tab-button');
 
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove('active');
-            }
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove('active');
-            }
+    tabContents.forEach(tab => tab.classList.remove('active'));
+    tabButtons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById(tabName).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
+    document.getElementById(tabName).classList.add('active');
+    event.currentTarget.classList.add('active'); // Используем event.currentTarget
+}
     </script>
 </body>
 </html>
