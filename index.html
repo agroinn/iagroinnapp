@@ -212,7 +212,7 @@
             <p>✅ Возможность обновления почвенных и производственных данных <span style="color: green;">для улучшения рекомендаций по агротехнологиям</p>
             <p>Стоимость за один участок:<p> 
             <!-- Первый блок кнопок -->
-    <button id="kazakhstan-btn-agrosovietnik" class="styled-button">Республика Казахстан</button>
+   <button id="kazakhstan-btn-agrosovietnik" class="styled-button">Республика Казахстан</button>
     <button id="russia-btn-agrosovietnik" class="styled-button">Российская Федерация</button>
     <div id="info-block-agrosovietnik" style="display: none;">
         <h3 id="info-title-agrosovietnik"></h3>
@@ -222,50 +222,48 @@
      <!-- Объединённый JavaScript -->
     <script>
         // Универсальная функция для отображения информации
-        function showInfo(country, blockId) {
-            const infoBlock = document.getElementById(`info-block-${blockId}`);
-            const title = document.getElementById(`info-title-${blockId}`);
-            const text = document.getElementById(`info-text-${blockId}`);
+       function showInfo(country, blockId) {
+    const infoBlock = document.getElementById(`info-block-${blockId}`);
+    const title = document.getElementById(`info-title-${blockId}`);
+    const text = document.getElementById(`info-text-${blockId}`);
 
-            // Устанавливаем текст в зависимости от выбранной страны и блока
-            if (country === 'kazakhstan') {
-                if (blockId === 'agrosovietnik') {
-                    title.textContent = '12 500 тг в первый год';
-                    text.textContent = '6 000 тг со второго года';
-                } else if (blockId === 'partner') {
-                    title.textContent = 'от 37 000 тг в первый год';
-                    text.textContent = 'от 30 000 тг со второго года';
-                }
-            } else if (country === 'russia') {
-                if (blockId === 'agrosovietnik') {
-                    title.textContent = '2 500 руб в первый год';
-                    text.textContent = '1 250 руб со второго года';
-                } else if (blockId === 'partner') {
-                    title.textContent = '6 400 руб в первый год';
-                    text.textContent = '5 100 руб со второго года';
-                }
-            }
-
-            // Показываем блок информации
-            infoBlock.style.display = 'block';
+    if (country === 'kazakhstan') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '12 500 тг в первый год';
+            text.textContent = '6 000 тг со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = 'от 37 000 тг в первый год';
+            text.textContent = 'от 30 000 тг со второго года';
         }
+    } else if (country === 'russia') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '2 500 руб в первый год';
+            text.textContent = '1 250 руб со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = '6 400 руб в первый год';
+            text.textContent = '5 100 руб со второго года';
+        }
+    }
 
-        // Добавляем обработчики событий для всех кнопок
-        document.getElementById('kazakhstan-btn-agrosovietnik').addEventListener('click', function () {
-            showInfo('kazakhstan', 'agrosovietnik');
-        });
+    infoBlock.style.display = 'block';
+}
 
-        document.getElementById('russia-btn-agrosovietnik').addEventListener('click', function () {
-            showInfo('russia', 'agrosovietnik');
-        });
+// Обработчики событий для всех кнопок
+document.getElementById('kazakhstan-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('kazakhstan', 'agrosovietnik');
+});
 
-        document.getElementById('kazakhstan-btn-partner').addEventListener('click', function () {
-            showInfo('kazakhstan', 'partner');
-        });
+document.getElementById('russia-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('russia', 'agrosovietnik');
+});
 
-        document.getElementById('russia-btn-partner').addEventListener('click', function () {
-            showInfo('russia', 'partner');
-        });
+document.getElementById('kazakhstan-btn-partner').addEventListener('click', function () {
+    showInfo('kazakhstan', 'partner');
+});
+
+document.getElementById('russia-btn-partner').addEventListener('click', function () {
+    showInfo('russia', 'partner');
+});
     </script>
 </body>
 </html>
