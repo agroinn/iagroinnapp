@@ -417,7 +417,21 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
     <p><b>Шаг 3:</b> Проведение ежегодной комплексной оценки плодородия, состояния и устойчивости почв.</p>
   </div>
 </div>
-    
+
+function openTab(tabName, event) {
+  const tabContents = document.querySelectorAll('.tab-content');
+  const tabButtons = document.querySelectorAll('.tariff-tabs .tab-button');
+
+  // Скрываем все вкладки
+  tabContents.forEach(tab => tab.classList.remove('active'));
+  // Убираем активный класс у всех кнопок
+  tabButtons.forEach(button => button.classList.remove('active'));
+
+  // Показываем выбранную вкладку
+  document.getElementById(tabName).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+              
   <div class="white-section">
     <h2 style="text-align: center;">Цифровой сервис, который помогает выявлять невидимые почвенные ограничения и предотвращать потери урожая</h2>
     <p style="text-align: center;">Сделайте вашу почву продуктивнее, устраняя причины низкой урожайности</p>
