@@ -189,10 +189,10 @@
 
     <div class="container">
         <div class="tariff-tabs">
-          <button class="tab-button active" onclick="openTab('plan-start', event)">AgroInn Start</button>
-          <button class="tab-button" onclick="openTab('plan-agrosovietnik', event)">Агросоветник</button>
-          <button class="tab-button" onclick="openTab('plan-partner', event)">AgroInn Partner</button>
-      </div>
+          <button class="tab-button active" onclick="switchTabs('start', event)">AgroInn Start</button>
+    <button class="tab-button" onclick="switchTabs('agrosovietnik', event)">Агросоветник</button>
+    <button class="tab-button" onclick="switchTabs('partner', event)">AgroInn Partner</button>
+  </div>
 
         <div id="plan-start" class="tab-content active">
             <h3>AgroInn Start <span style="color: green; font-weight: bold;">(Пробная версия)</span></h3>
@@ -341,9 +341,9 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
 
   <div class="container">
     <div class="tariff-tabs">
-    <button class="tab-button active" onclick="openTab('work-start', event)">AgroInn Start</button>
-    <button class="tab-button" onclick="openTab('work-agrosovietnik', event)">Агросоветник</button>
-    <button class="tab-button" onclick="openTab('work-partner', event)">AgroInn Partner</button>
+    <button class="tab-button active" onclick="switchTabs('start', event)">AgroInn Start</button>
+    <button class="tab-button" onclick="switchTabs('agrosovietnik', event)">Агросоветник</button>
+    <button class="tab-button" onclick="switchTabs('partner', event)">AgroInn Partner</button>
   </div>
     
     <div id="work-start" class="tab-content active">
@@ -419,18 +419,22 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
 </div>
 
 <script>
-function openTab(tabName, event) {
-  const tabContents = document.querySelectorAll('.tab-content');
-  const tabButtons = document.querySelectorAll('.tariff-tabs .tab-button');
+function switchTabs(tabName, event) {
+  // Найти все вкладки в обоих разделах
+  const allTabContents = document.querySelectorAll('.tab-content');
+  const allTabButtons = document.querySelectorAll('.tariff-tabs .tab-button');
 
-  // Скрываем все вкладки
-  tabContents.forEach(tab => tab.classList.remove('active'));
-  // Убираем активный класс у всех кнопок
-  tabButtons.forEach(button => button.classList.remove('active'));
+  // Скрыть все вкладки
+  allTabContents.forEach(tab => tab.classList.remove('active'));
+  allTabButtons.forEach(button => button.classList.remove('active'));
 
-  // Показываем выбранную вкладку
-  document.getElementById(tabName).classList.add('active');
-  event.currentTarget.classList.add('active'); // Используем event.currentTarget
+  // Показать соответствующие вкладки в обоих разделах
+  document.getElementById(`plan-${tabName}`).classList.add('active');
+  document.getElementById(`work-${tabName}`).classList.add('active');
+
+  // Добавить активный класс к кнопкам в обоих разделах
+  const buttons = document.querySelectorAll(`.tab-button[onclick="switchTabs('${tabName}', event)"]`);
+  buttons.forEach(button => button.classList.add('active'));
 }
 </script>
               
