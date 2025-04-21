@@ -140,77 +140,18 @@
         .tab-content.active {
             display: block;
         }
-       <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кнопки для Казахстана и России</title>
-    <style>
-        body {
-            font-family: Helvetica, sans-serif; /* Шрифт для всего документа */
-            text-align: center; /* Центрирование текста и элементов */
-            margin: 0;
-            padding: 0;
+      .styled-button {
+            background: linear-gradient(to right, #4CAF50, #81C784);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            font-size: 16px;
+            cursor: pointer;
         }
-
-        .styled-button {
-            background: linear-gradient(to right, #4CAF50, #81C784); /* Градиентный фон */
-            color: white; /* Белый текст */
-            border: none; /* Убираем стандартную границу */
-            border-radius: 25px; /* Закругленные углы */
-            padding: 10px 30px; /* Внутренний отступ */
-            font-size: 16px; /* Размер шрифта */
-            font-weight: bold; /* Жирный текст */
-            cursor: pointer; /* Указатель при наведении */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
-            transition: transform 0.2s, box-shadow 0.2s; /* Анимация наведения */
-            margin: 15px; /* Отступ между кнопками */
-        }
-
         .styled-button:hover {
-            transform: scale(1.1); /* Увеличение кнопки при наведении */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Более глубокая тень */
+            transform: scale(1.1);
         }
-
-        .styled-button:active {
-            transform: scale(0.95); /* Уменьшение кнопки при клике */
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Меньшая тень */
-        }
-    </style>
-</head>
-<body>
-    <h1>Выберите страну</h1>
-    <button id="kazakhstan-btn" class="styled-button">Республика Казахстан</button>
-    <button id="russia-btn" class="styled-button">Российская Федерация</button>
-    <div id="info-block" style="display: none;">
-        <h3 id="info-title"></h3>
-        <p id="info-text"></p>
-    </div>
-    <script>
-        function showInfo(country) {
-            const infoBlock = document.getElementById('info-block');
-            const title = document.getElementById('info-title');
-            const text = document.getElementById('info-text');
-
-            if (country === 'kazakhstan') {
-                title.textContent = '12 500 тг в первый год';
-                text.textContent = '6000 тг со второго года';
-            } else if (country === 'russia') {
-                title.textContent = '2500 руб в первый год';
-                text.textContent = '1250 руб со второго года';
-            }
-
-            infoBlock.style.display = 'block';
-        }
-
-        document.getElementById('kazakhstan-btn').addEventListener('click', function () {
-            showInfo('kazakhstan');
-        });
-
-        document.getElementById('russia-btn').addEventListener('click', function () {
-            showInfo('russia');
-        });
-    </script>
-</body>
-    }
   </style>
 </head>
 <body>
@@ -272,21 +213,16 @@
             <!-- Кнопки -->
     <button id="kazakhstan-btn" class="styled-button">Республика Казахстан</button>
     <button id="russia-btn" class="styled-button">Российская Федерация</button>
-    
-    <!-- Блок с информацией -->
     <div id="info-block" style="display: none;">
-        <h3 id="info-title" style="font-size: 24px;"></h3>
-        <p id="info-text" style="font-size: 16px;"></p>
+        <h3 id="info-title"></h3>
+        <p id="info-text"></p>
     </div>
-
     <script>
-        // Функция для отображения информации
         function showInfo(country) {
             const infoBlock = document.getElementById('info-block');
             const title = document.getElementById('info-title');
             const text = document.getElementById('info-text');
 
-            // Устанавливаем текст в зависимости от выбранной страны
             if (country === 'kazakhstan') {
                 title.textContent = '12 500 тг в первый год';
                 text.textContent = '6000 тг со второго года';
@@ -295,11 +231,9 @@
                 text.textContent = '1250 руб со второго года';
             }
 
-            // Показываем блок информации
             infoBlock.style.display = 'block';
         }
 
-        // События для кнопок
         document.getElementById('kazakhstan-btn').addEventListener('click', function () {
             showInfo('kazakhstan');
         });
@@ -449,19 +383,19 @@
   </footer>
 </body>
    <script>
-       function openTab(tabName, event) { // Добавляем аргумент event
-    const tabContents = document.querySelectorAll('.tab-content');
-    const tabButtons = document.querySelectorAll('.tab-button');
+        function openTab(tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = document.querySelectorAll('.tab-button');
 
-    for (let i = 0; i < tabContents.length; i++) {
-        tabContents[i].classList.remove('active');
-    }
-    for (let i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].classList.remove('active');
-    }
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
 
-    document.getElementById(tabName).classList.add('active');
-    event.currentTarget.classList.add('active'); // Используем event.currentTarget
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
         }
     </script>
 </body>
