@@ -145,7 +145,7 @@
     <title>Кнопки для Казахстана и России</title>
     <style>
         body {
-            font-family: Arial, sans-serif; /* Шрифт для всего документа */
+            font-family: Helvetica, sans-serif; /* Шрифт для всего документа */
             text-align: center; /* Центрирование текста и элементов */
             margin: 0;
             padding: 0;
@@ -180,6 +180,35 @@
     <h1>Выберите страну</h1>
     <button id="kazakhstan-btn" class="styled-button">Республика Казахстан</button>
     <button id="russia-btn" class="styled-button">Российская Федерация</button>
+    <div id="info-block" style="display: none;">
+        <h3 id="info-title"></h3>
+        <p id="info-text"></p>
+    </div>
+    <script>
+        function showInfo(country) {
+            const infoBlock = document.getElementById('info-block');
+            const title = document.getElementById('info-title');
+            const text = document.getElementById('info-text');
+
+            if (country === 'kazakhstan') {
+                title.textContent = '12 500 тг в первый год';
+                text.textContent = '6000 тг со второго года';
+            } else if (country === 'russia') {
+                title.textContent = '2500 руб в первый год';
+                text.textContent = '1250 руб со второго года';
+            }
+
+            infoBlock.style.display = 'block';
+        }
+
+        document.getElementById('kazakhstan-btn').addEventListener('click', function () {
+            showInfo('kazakhstan');
+        });
+
+        document.getElementById('russia-btn').addEventListener('click', function () {
+            showInfo('russia');
+        });
+    </script>
 </body>
     }
   </style>
@@ -420,19 +449,19 @@
   </footer>
 </body>
    <script>
-        function openTab(tabName) {
-            const tabContents = document.querySelectorAll('.tab-content');
-            const tabButtons = document.querySelectorAll('.tab-button');
+       function openTab(tabName, event) { // Добавляем аргумент event
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabButtons = document.querySelectorAll('.tab-button');
 
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove('active');
-            }
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove('active');
-            }
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove('active');
+    }
+    for (let i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove('active');
+    }
 
-            document.getElementById(tabName).classList.add('active');
-            event.currentTarget.classList.add('active');
+    document.getElementById(tabName).classList.add('active');
+    event.currentTarget.classList.add('active'); // Используем event.currentTarget
         }
     </script>
 </body>
