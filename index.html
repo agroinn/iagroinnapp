@@ -340,6 +340,14 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
   </div>
 
   <div class="container">
+    <div class="tariff-tabs">
+    <button class="tab-button active" onclick="openTab('start', event)">AgroInn Start</button>
+    <button class="tab-button" onclick="openTab('agrosovietnik', event)">Агросоветник</button>
+    <button class="tab-button" onclick="openTab('partner', event)">AgroInn Partner</button>
+  </div>
+    
+    <div id="step1" class="tab-content active">
+    <h3>AgroInn Start</h3>
     <h2>Шаг 1</h2>
     <p>Предоставляете всю информацию которая у вас сейчас есть, включая: наличие техники, историю посевов, агрохимические анализы (если они есть). Чем больше данных, тем выше точность.</p>
     <h2>Шаг 2</h2>
@@ -395,6 +403,21 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
     <p>Искусственный интеллект и международный научный консорциум, включающий агрономов, почвоведов, агрохимиков, биологов, гидрологов и других специалистов из России, Казахстана и других стран, показывают, какие ограничения угрожают вашему урожаю и как их устранить.</p>
   </div>
 
+<div id="agrosovietnik" class="tab-content">
+    <h3>Агросоветник</h3>
+    <p><b>Шаг 1:</b> Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив).</p>
+    <p><b>Шаг 2:</b> Глубокая агрооценка физико-химического состояния сельхозугодий.</p>
+    <p><b>Шаг 3:</b> Разработка цифровой модели биогеографических и климатических особенностей территории.</p>
+  </div>
+
+    <div id="partner" class="tab-content">
+    <h3>AgroInn Partner</h3>
+    <p><b>Шаг 1:</b> Картография любого количества полей с делением на участки.</p>
+    <p><b>Шаг 2:</b> Оценка, интерпретация и интеграция новых почвенных данных в карту.</p>
+    <p><b>Шаг 3:</b> Проведение ежегодной комплексной оценки плодородия, состояния и устойчивости почв.</p>
+  </div>
+</div>
+    
   <div class="white-section">
     <h2 style="text-align: center;">Цифровой сервис, который помогает выявлять невидимые почвенные ограничения и предотвращать потери урожая</h2>
     <p style="text-align: center;">Сделайте вашу почву продуктивнее, устраняя причины низкой урожайности</p>
