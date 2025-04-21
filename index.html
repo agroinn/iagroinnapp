@@ -140,9 +140,47 @@
         .tab-content.active {
             display: block;
         }
-     <meta charset="UTF-8">
+       <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кнопки для Казахстана и России</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Шрифт для всего документа */
+            text-align: center; /* Центрирование текста и элементов */
+            margin: 0;
+            padding: 0;
+        }
+
+        .styled-button {
+            background: linear-gradient(to right, #4CAF50, #81C784); /* Градиентный фон */
+            color: white; /* Белый текст */
+            border: none; /* Убираем стандартную границу */
+            border-radius: 25px; /* Закругленные углы */
+            padding: 10px 30px; /* Внутренний отступ */
+            font-size: 16px; /* Размер шрифта */
+            font-weight: bold; /* Жирный текст */
+            cursor: pointer; /* Указатель при наведении */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
+            transition: transform 0.2s, box-shadow 0.2s; /* Анимация наведения */
+            margin: 15px; /* Отступ между кнопками */
+        }
+
+        .styled-button:hover {
+            transform: scale(1.1); /* Увеличение кнопки при наведении */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Более глубокая тень */
+        }
+
+        .styled-button:active {
+            transform: scale(0.95); /* Уменьшение кнопки при клике */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Меньшая тень */
+        }
+    </style>
+</head>
+<body>
+    <h1>Выберите страну</h1>
+    <button id="kazakhstan-btn" class="styled-button">Республика Казахстан</button>
+    <button id="russia-btn" class="styled-button">Российская Федерация</button>
+</body>
     }
   </style>
 </head>
@@ -203,8 +241,8 @@
             <p>✅ Возможность обновления почвенных и производственных данных для улучшения рекомендаций по агротехнологиям</p>
             <p>Стоимость за один участок:<p> 
             <!-- Кнопки -->
-    <button id="kazakhstan-btn">Республика Казахстан</button>
-    <button id="russia-btn">Российская Федерация</button>
+    <button id="kazakhstan-btn" class="styled-button">Республика Казахстан</button>
+    <button id="russia-btn" class="styled-button">Российская Федерация</button>
     
     <!-- Блок с информацией -->
     <div id="info-block" style="display: none;">
