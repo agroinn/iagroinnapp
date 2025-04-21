@@ -287,7 +287,54 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
         <p id="info-text-partner"></p>
     </div>
 </div>
-     
+     <script>
+        // Универсальная функция для отображения информации
+       function showInfo(country, blockId) {
+    const infoBlock = document.getElementById(`info-block-${blockId}`);
+    const title = document.getElementById(`info-title-${blockId}`);
+    const text = document.getElementById(`info-text-${blockId}`);
+
+    if (country === 'kazakhstan') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '12 500 тг в первый год';
+            text.textContent = '6 000 тг со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = 'от 37 000 тг в первый год';
+            text.textContent = 'от 30 000 тг со второго года';
+        }
+    } else if (country === 'russia') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '2 500 руб в первый год';
+            text.textContent = '1 250 руб со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = '6 400 руб в первый год';
+            text.textContent = '5 100 руб со второго года';
+        }
+    }
+
+    infoBlock.style.display = 'block';
+}
+
+// Обработчики событий для всех кнопок
+document.getElementById('kazakhstan-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('kazakhstan', 'agrosovietnik');
+});
+
+document.getElementById('russia-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('russia', 'agrosovietnik');
+});
+
+document.getElementById('kazakhstan-btn-partner').addEventListener('click', function () {
+    showInfo('kazakhstan', 'partner');
+});
+
+document.getElementById('russia-btn-partner').addEventListener('click', function () {
+    showInfo('russia', 'partner');
+});
+    </script>
+</body>
+</html>
+              
   <div class="white-section">
     <h2>Как это работает?</h2>
   </div>
