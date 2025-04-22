@@ -420,6 +420,8 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
 
 <script>
 function switchTabs(tabName, event) {
+   event.preventDefault(); // Предотвращаем стандартное поведение ссылки
+  event.stopPropagation(); // Останавливаем дальнейшее распространение события
   // Найти все вкладки в обоих разделах
   const allTabContents = document.querySelectorAll('.tab-content');
   const allTabButtons = document.querySelectorAll('.tariff-tabs .tab-button');
