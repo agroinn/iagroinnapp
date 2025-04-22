@@ -163,11 +163,7 @@
     .styled-button:hover {
       transform: scale(1.1);
     }
-    #choose-plan-section { /* Добавляем ID для отслеживания */
-      padding-top: 60px; /* Компенсация за фиксированную панель */
-      margin-top: -60px; /* Сдвигаем вверх, чтобы контент начинался сразу за заголовком */
-    }
-      .choose-plan-container { /* Новый класс */
+    .choose-plan-container { /* Новый класс */
       padding-top: 50px; /* Отступ, равный или чуть больше высоты фиксированной панели */
     }
   </style>
@@ -199,10 +195,6 @@
     <h2 style="text-align: center;">Готовы начать работу с iAgroInnApp?</h2>
     <p style="text-align: center;">Свяжитесь с человеком, от которого вы получили ссылку, чтобы оформить доступ</p>
   </div>
-
-  <div class="white-section" id="choose-plan-section">
-    <h2>Выберите план</h2>
-   </div>
   
    <div class="tariff-tabs" id="tariffTabs">
       <button class="tab-button active" onclick="switchTabs('start', event)">AgroInn Start</button>
@@ -210,6 +202,10 @@
       <button class="tab-button" onclick="switchTabs('partner', event)">AgroInn Partner</button>
     </div>
   
+  <div class="white-section" id="choose-plan-section">
+    <h2>Выберите план</h2>
+   </div>
+   
   <div class="container">
     <div id="plan-start" class="tab-content active">
       <h3>AgroInn Start <span style="color: green; font-weight: bold;">(Пробная версия)</span></h3>
