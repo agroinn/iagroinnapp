@@ -103,41 +103,63 @@
       margin: 0 10px;
       vertical-align: middle;
     }
-    .tariff-tabs .tab-button.app-store-style {
+    .tariff-tabs .tab-button {
+      padding: 10px 20px; /* Подстройте отступы по вкусу */
+      font-size: 16px; /* Размер шрифта */
+      cursor: pointer;
       background-color: #000000; /* Черный фон */
       color: #ffffff; /* Белый текст */
-      border: 1px solid #000000; /* Черная граница */
-      border-radius: 8px; /* Немного меньше скругление */
-      padding: 10px 20px; /* Подстройте отступы */
-      font-size: 16px; /* Размер шрифта */
-      min-width: auto; /* Убираем минимальную ширину */
-    }
-    .tariff-tabs .tab-button.app-store-style.active {
-      background-color: #333333; /* Темнее при активации */
-      color: #ffffff;
-      border-color: #333333;
+      border: 1px solid #ffffff; /* Белая граница */
+      border-radius: 8px; /* Скругление углов */
+      margin: 0 5px; /* Отступы между кнопками */
+      min-width: auto; /* Ширина по содержимому */
+      text-align: center; /* Центрирование текста */
+      transition: background-color 0.3s ease; /* Плавный переход фона */
     }
 
-    .tariff-tabs .tab-button.app-store-style:hover {
+    .tariff-tabs .tab-button.active {
+      background-color: #333333; /* Темнее при активации */
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .tariff-tabs .tab-button:hover {
       background-color: #222222; /* Еще темнее при наведении */
     }
 
-    /* Остальные стили для .tab-button остаются без изменений,
-       чтобы влиять на "Агросоветник" и "AgroInn Partner" */
+    .tariff-tabs .tab-button:active {
+      transform: scale(1); /* Убираем увеличение при нажатии */
+    }
 
-    /* Медиазапрос для маленьких экранов (смартфонов) - также уточним селектор */
+    .styled-button { /* Эти стили больше не нужны для кнопок табов */
+      /* background: linear-gradient(to right, #4CAF50, #81C784); */
+      /* color: white; */
+      /* border: none; */
+      /* border-radius: 25px; */
+      /* padding: 10px 30px; */
+      /* font-size: 16px; */
+      /* cursor: pointer; */
+      /* margin: 15px; */
+      /* transition: transform 0.2s ease-in-out; */
+    }
+
+    .styled-button:hover {
+      transform: scale(1.05); /* Оставляем увеличение для кнопок стоимости */
+    }
+
+    .styled-button:active {
+      transform: scale(1); /* Убираем увеличение при нажатии для кнопок стоимости */
+    }
+
+    /* Медиазапрос для маленьких экранов (смартфонов) */
     @media (max-width: 600px) {
       .tariff-tabs .tab-button {
-        padding: 12px 20px;
-        font-size: 16px;
-        margin: 0 3px;
-        min-width: 100px;
+        padding: 8px 15px; /* Уменьшаем отступы */
+        font-size: 14px; /* Уменьшаем шрифт */
+        margin: 0 3px; /* Уменьшаем отступы между кнопками */
+        border-radius: 6px; /* Немного уменьшим скругление */
       }
-      .tariff-tabs .tab-button.app-store-style {
-        padding: 8px 15px; /* Уменьшим отступы на маленьких экранах */
-        font-size: 14px;
-      }
-      .styled-button { /* Стили для кнопок стоимости остаются */
+      .styled-button { /* Стили для кнопок стоимости */
         padding: 8px 20px;
         font-size: 14px;
         margin: 10px;
