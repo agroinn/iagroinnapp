@@ -103,22 +103,44 @@
       margin: 0 10px;
       vertical-align: middle;
     }
-    .tariff-tabs {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border-bottom: 0px solid #fff;
-      z-index: 100; /* Чтобы фиксированная панель была над другим контентом */
+    .tariff-tabs .tab-button.app-store-style {
+      background-color: #000000; /* Черный фон */
+      color: #ffffff; /* Белый текст */
+      border: 1px solid #000000; /* Черная граница */
+      border-radius: 8px; /* Немного меньше скругление */
+      padding: 10px 20px; /* Подстройте отступы */
+      font-size: 16px; /* Размер шрифта */
+      min-width: auto; /* Убираем минимальную ширину */
     }
-    .tariff-tabs.fixed {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #00026c; /* Цвет фона фиксированной панели */
-      padding: 10px 0; /* Добавьте немного отступов для красоты */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Небольшая тень для отделения */
+    .tariff-tabs .tab-button.app-store-style.active {
+      background-color: #333333; /* Темнее при активации */
+      color: #ffffff;
+      border-color: #333333;
+    }
+
+    .tariff-tabs .tab-button.app-store-style:hover {
+      background-color: #222222; /* Еще темнее при наведении */
+    }
+
+    /* Остальные стили для .tab-button остаются без изменений,
+       чтобы влиять на "Агросоветник" и "AgroInn Partner" */
+
+    /* Медиазапрос для маленьких экранов (смартфонов) - также уточним селектор */
+    @media (max-width: 600px) {
+      .tariff-tabs .tab-button {
+        padding: 12px 20px;
+        font-size: 16px;
+        margin: 0 3px;
+        min-width: 100px;
+      }
+      .tariff-tabs .tab-button.app-store-style {
+        padding: 8px 15px; /* Уменьшим отступы на маленьких экранах */
+        font-size: 14px;
+      }
+      .styled-button { /* Стили для кнопок стоимости остаются */
+        padding: 8px 20px;
+        font-size: 14px;
+        margin: 10px;
     }
     .tab-button {
       padding: 15px 25px; /* Увеличим немного отступы для квадратной формы */
@@ -228,8 +250,8 @@
     <h2>Выберите план</h2>
    </div>
 
-  <div class="tariff-tabs" id="tariffTabs">
-    <button class="tab-button active styled-button" onclick="switchTabs('start', event)">AgroInn Start</button>
+   <div class="tariff-tabs" id="tariffTabs">
+    <button class="tab-button active app-store-style" onclick="switchTabs('start', event)">AgroInn Start</button>
     <button class="tab-button styled-button" onclick="switchTabs('agrosovietnik', event)">Агросоветник</button>
     <button class="tab-button styled-button" onclick="switchTabs('partner', event)">AgroInn Partner</button>
   </div>
