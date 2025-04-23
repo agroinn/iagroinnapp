@@ -315,7 +315,6 @@
    </div>
   
   <div class="container">
-    <div id="plan-start" class="tab-content active">
       <h3>AgroInn Start <span style="color: green; font-weight: bold;">(Пробная версия)</span></h3>
       <p>✅ Размещение одного поля на карте iAgroInnApp</p>
       <p>✅ Первичная агрооценка физического и химического состояния поля <span style="color: green;">на основе проверенных спутниковых данных</p>
@@ -369,10 +368,55 @@
       <h3>Бесплатно<h3>
     </div>
 
-    <div id="plan-agrosovietnik" class="tab-content">
+     <div class="container">
       <h3>Агросоветник</h3>
       <p>✅ Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив) <span style="color: green;">(чтобы точно выявить особенности почвы и давать рекомендации по каждому участку)</p>
       <p>✅ Глубокая агрооценка физико-химического и, при наличии, биологического состояния сельхозугодий на основе всех доступных лабораторных и спутниковых данных<span style="color: green;">(реализуется в первый год)</span></p>
+      <style>
+        .legend {
+          font-family: sans-serif;
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 8px;
+        }
+
+        .legend-item {
+          display: flex;
+          align-items: center;
+        }
+
+        .legend-color {
+          width: 16px;
+          height: 16px;
+          border-radius: 3px;
+          margin-right: 8px;
+          flex-shrink: 0;
+        }
+
+        .red { background-color: #fd514b; }
+        .yellow { background-color: #fbfa03; }
+        .green { background-color: #339969; }
+      </style>
+
+      <div>
+        <p>✅ Результаты оценки визуализированы в форме цветной карты, где:</p>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color red"></div>
+            <div>красный цвет — критичная ситуация</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color yellow"></div>
+            <div>жёлтый цвет — требует внимания</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color green"></div>
+            <div>зелёный цвет — всё хорошо</div>
+          </div>
+        </div>
+      </div>
       <p>✅ Разработка цифровой модели биогеографических и климатических особенностей территории <span style="color: green;">(реализуется в первый год)</span></p>
       <p>✅ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
       <p>✅ Возможность обновления почвенных и производственных данных <span style="color: green;">для улучшения рекомендаций по агротехнологиям</p>
@@ -433,11 +477,56 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
 </body>
 </html>
         </div>
-       <div id="plan-partner" class="tab-content">
+      <div class="container">
       <h3>AgroInn Partner</h3>
       <p>✅ Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив) <span style="color: green;">(чтобы точно выявить особенности почвы и давать рекомендации по каждому участку)</p>
       <p>✅ Разработка цифровой модели биогеографических и климатических особенностей территории <span style="color: green;">(реализуется в первый год)</span></p>
       <p>✅ Проведение полного анализа физического, химического и биологического состояния почв <span style="color: green;">в первый и третий годы</p>
+       <style>
+        .legend {
+          font-family: sans-serif;
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 8px;
+        }
+
+        .legend-item {
+          display: flex;
+          align-items: center;
+        }
+
+        .legend-color {
+          width: 16px;
+          height: 16px;
+          border-radius: 3px;
+          margin-right: 8px;
+          flex-shrink: 0;
+        }
+
+        .red { background-color: #fd514b; }
+        .yellow { background-color: #fbfa03; }
+        .green { background-color: #339969; }
+      </style>
+
+      <div>
+        <p>✅ Результаты оценки визуализированы в форме цветной карты, где:</p>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color red"></div>
+            <div>красный цвет — критичная ситуация</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color yellow"></div>
+            <div>жёлтый цвет — требует внимания</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color green"></div>
+            <div>зелёный цвет — всё хорошо</div>
+          </div>
+        </div>
+      </div>
       <p>✅ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
       <p>✅ Возможность обновления почвенных и производственных данных <span style="color: green;">для улучшения рекомендаций по агротехнологиям</p>
       <p>✅ <span style="color: green;">(На выбор)</span> Ежегодное проведение листовой диагностики <span style="color: green;">(с применением зольного метода)</span> для контроля питания, мониторинга усвоения элементов и корректировки планов</p>
@@ -500,83 +589,7 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
 </body>
 </html>
               
-  <div class="white-section">
-    <h2>Как это работает?</h2>
-  </div>
-
-  <div class="container">
-    <div id="work-start" class="tab-content active">
-      <h3>AgroInn Start</h3>
-      <h2>Шаг 1</h2>
-      <p>Предоставляете всю информацию которая у вас сейчас есть, включая: наличие техники, историю посевов, агрохимические анализы (если они есть). Чем больше данных, тем выше точность.</p>
-      <h2>Шаг 2</h2>
-      <p>Машина автоматически оценит физические, химические и биологические состояния почв с учетом климатических условий, культуры растений и ваших потребностей.</p>
-      <h2>Шаг 3</h2>
-      <style>
-        .legend {
-          font-family: sans-serif;
-          font-size: 14px;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          margin-top: 8px;
-        }
-
-        .legend-item {
-          display: flex;
-          align-items: center;
-        }
-
-        .legend-color {
-          width: 16px;
-          height: 16px;
-          border-radius: 3px;
-          margin-right: 8px;
-          flex-shrink: 0;
-        }
-
-        .red { background-color: #fd514b; }
-        .yellow { background-color: #fbfa03; }
-        .green { background-color: #339969; }
-      </style>
-
-      <div>
-        <p>Вы получаете интерпретацию в виде цветной карты, где:</p>
-        <div class="legend">
-          <div class="legend-item">
-            <div class="legend-color red"></div>
-            <div>красный цвет — критичная ситуация</div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-color yellow"></div>
-            <div>жёлтый цвет — требует внимания</div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-color green"></div>
-            <div>зелёный цвет — всё хорошо</div>
-          </div>
-        </div>
-      </div>
-
-      <h2>Шаг 4</h2>
-      <p>Искусственный интеллект и международный научный консорциум, включающий агрономов, почвоведов, агрохимиков, биологов, гидрологов и других специалистов из России, Казахстана и других стран, показывают, какие ограничения угрожают вашему урожаю и как их устранить.</p>
-    </div>
-
-    <div id="work-agrosovietnik" class="tab-content">
-      <h3>Агросоветник</h3>
-      <p><b>Шаг 1:</b> Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив).</p>
-      <p><b>Шаг 2:</b> Глубокая агрооценка физико-химического состояния сельхозугодий.</p>
-      <p><b>Шаг 3:</b> Разработка цифровой модели биогеографических и климатических особенностей территории.</p>
-    </div>
-
-    <div id="work-partner" class="tab-content">
-      <h3>AgroInn Partner</h3>
-      <p><b>Шаг 1:</b> Картография любого количества полей с делением на участки.</p>
-      <p><b>Шаг 2:</b> Оценка, интерпретация и интеграция новых почвенных данных в карту.</p>
-      <p><b>Шаг 3:</b> Проведение ежегодной комплексной оценки плодородия, состояния и устойчивости почв.</p>
-    </div>
-  </div>
-
+ Не знаю, что за скрипт. Забыл
   <script>
     function switchTabs(tabName, event) {
         event.preventDefault();
