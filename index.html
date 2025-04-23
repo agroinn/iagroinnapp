@@ -313,18 +313,57 @@
   <div class="white-section" id="choose-plan-section">
     <h2>Выберите план</h2>
    </div>
-
-   <div class="tariff-tabs" id="tariffTabs">
-    <button class="tab-button active app-store-style" onclick="switchTabs('start', event)">AgroInn Start</button>
-    <button class="tab-button styled-button" onclick="switchTabs('agrosovietnik', event)">Агросоветник</button>
-    <button class="tab-button styled-button" onclick="switchTabs('partner', event)">AgroInn Partner</button>
-  </div>
   
   <div class="container">
     <div id="plan-start" class="tab-content active">
       <h3>AgroInn Start <span style="color: green; font-weight: bold;">(Пробная версия)</span></h3>
       <p>✅ Размещение одного поля на карте iAgroInnApp</p>
       <p>✅ Первичная агрооценка физического и химического состояния поля <span style="color: green;">на основе проверенных спутниковых данных</p>
+      <style>
+        .legend {
+          font-family: sans-serif;
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 8px;
+        }
+
+        .legend-item {
+          display: flex;
+          align-items: center;
+        }
+
+        .legend-color {
+          width: 16px;
+          height: 16px;
+          border-radius: 3px;
+          margin-right: 8px;
+          flex-shrink: 0;
+        }
+
+        .red { background-color: #fd514b; }
+        .yellow { background-color: #fbfa03; }
+        .green { background-color: #339969; }
+      </style>
+
+      <div>
+        <p>✅ Результаты оценки визуализированы в форме цветной карты, где:</p>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color red"></div>
+            <div>красный цвет — критичная ситуация</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color yellow"></div>
+            <div>жёлтый цвет — требует внимания</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color green"></div>
+            <div>зелёный цвет — всё хорошо</div>
+          </div>
+        </div>
+      </div>
       <p>✅ Возможность добавления ваших новых почвенных данных на карту <span style="color: green;">с их профессиональной оценкой и интерпретацией</p>
       <p>Стоимость:<p>
       <h3>Бесплатно<h3>
