@@ -230,46 +230,6 @@
   </style>
 </head>
   <body>
-  <script>
-    // Пример нового JavaScript-кода
-    const slider = document.querySelector('.tariff-slider');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
-
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2; // Скорость прокрутки
-        slider.scrollLeft = scrollLeft - walk;
-    });
-
-    slider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('touchmove', (e) => {
-        const x = e.touches[0].pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
-        slider.scrollLeft = scrollLeft - walk;
-    });
-  </script>
-
   <header class="logo">
     <img src="Дизайн без названия.png" alt="Логотип AgroInn" width="220">
     <div class="language-switch">
@@ -277,7 +237,6 @@
       <button onclick="location.href='iAgroInnApp Kaz.html'">Kaz</button>
     </div>
   </header>
-</body>
 
   <div class="container">
     <h1 style="text-align: center;">iAgroInnApp</h1>
