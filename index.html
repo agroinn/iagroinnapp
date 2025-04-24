@@ -91,7 +91,7 @@
             vertical-align: middle;
         }
 
-        /* Стили для слайдера тарифных планов */
+       /* Стили для слайдера тарифных планов */
         .tariff-slider-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
@@ -104,21 +104,14 @@
         }
 
         .tariff-card {
-            flex: 0 0 80%; /* Занимает 80% ширины контейнера */
+            flex-shrink: 0; /* Запрещаем сжиматься */
             background-color: #191970;
             color: white;
             border-radius: 10px;
             padding: 20px;
-            min-width: 300px;
+            min-width: 300px; /* Задаем минимальную ширину */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            scroll-snap-align: center;
-        }
-
-        @media (max-width: 600px) {
-            .tariff-card {
-                flex: 0 0 95%; /* На маленьких экранах занимает почти всю ширину */
-                min-width: auto;
-            }
+            scroll-snap-align: start; /* Привязка к началу при прокрутке */
         }
 
         .tariff-card h3 {
