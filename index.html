@@ -103,123 +103,183 @@
       margin: 0 10px;
       vertical-align: middle;
     }
-       /* Стили для слайдера тарифных планов */
-        .tariff-slider-container {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
+     .tariff-tabs {
+      display: flex;
+      justify-content: center; /* Центрирование на десктопе */
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #fff;
+      z-index: 100;
+    }
 
-        .tariff-card {
-            background-color: #191970;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 20px;
-            min-width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
-        }
+    .tariff-tabs.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #00026c;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: flex; /* Убедитесь, что flexbox активен и для фиксированной панели */
+      justify-content: center; /* Центрирование и для фиксированной панели */
+    }
 
-        .tariff-card:hover {
-            transform: scale(1.03);
-        }
+    .tariff-tabs .tab-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      margin: 0 5px;
+      min-width: auto;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
 
-        .tariff-card h3 {
-            text-align: center;
-            margin-bottom: 15px;
-            color: #00ffff;
-        }
+    .tariff-tabs .tab-button.active {
+      background-color: #333333;
+      color: #ffffff;
+      border-color: #ffffff;
+    }
 
-        .tariff-card p {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
+    .tariff-tabs .tab-button:hover {
+      background-color: #222222;
+    }
 
-        .tariff-card .price {
-            text-align: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #4CAF50;
-        }
+    .tariff-tabs .tab-button:active {
+      transform: scale(1);
+    }
 
-        .slider-dots {
-            text-align: center;
-            margin-bottom: 10px;
-        }
+      styled-button { /* Стили для кнопок стоимости */
+      padding: 8px 20px;
+      font-size: 14px;
+      margin: 10px;
+    }
 
-        .slider-dots span {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #bbb;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .styled-button:hover {
+      transform: scale(1.05);
+    }
 
-        .slider-dots span.active {
-            background-color: #00ffff;
-        }
+    .styled-button:active {
+      transform: scale(1);
+    }
 
-        .legend {
-            font-family: sans-serif;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 8px;
-        }
+    /* Медиазапрос для маленьких экранов (смартфонов) */
+    @media (max-width: 600px) {
+      .tariff-tabs {
+        flex-direction: column; /* Размещаем кнопки вертикально */
+        align-items: center; /* Центрируем по горизонтали */
+      }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-        }
+      .tariff-tabs.fixed {
+        flex-direction: column; /* Также вертикально для фиксированной панели */
+        align-items: center;
+      }
 
-        .legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 3px;
-            margin-right: 8px;
-            flex-shrink: 0;
-        }
+      .tariff-tabs .tab-button {
+        width: 90%; /* Занимают почти всю ширину */
+        margin: 5px 0; /* Отступы сверху и снизу */
+      }
 
-        .red { background-color: #fd514b; }
-        .yellow { background-color: #fbfa03; }
-        .green { background-color: #339969; }
-        .styled-button { /* Стили для кнопок стоимости */
-            background: linear-gradient(to right, #4CAF50, #81C784);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 15px;
-            transition: transform 0.2s ease-in-out; /* Плавная анимация */
-        }
-        .styled-button:hover {
-            transform: scale(1.05); /* Небольшое увеличение при наведении для кнопок стоимости */
-        }
-        .styled-button:active {
-            transform: scale(1); /* Убираем увеличение при нажатии для кнопок стоимости */
-        }
-        #info-block-agrosovietnik, #info-block-partner {
-            display: none;
-            margin-top: 10px;
-            text-align: center;
-        }
-        #info-title-agrosovietnik, #info-title-partner {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #00ffff;
-            margin-bottom: 5px;
-        }
+      /* Изменяем порядок кнопок, помещая "AgroInn Partner" вниз */
+      #tariffTabs {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #tariffTabs button:nth-child(1) { /* AgroInn Start */
+        order: 1;
+      }
+
+      #tariffTabs button:nth-child(2) { /* Агросоветник */
+        order: 2;
+      }
+
+      #tariffTabs button:nth-child(3) { /* AgroInn Partner */
+        order: 3; /* Помещаем вниз */
+      }
+
+      .styled-button {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin: 5px; /* Уменьшаем отступы кнопок стоимости */
+    }
+    .tab-button {
+      padding: 15px 25px; /* Увеличим немного отступы для квадратной формы */
+      font-size: 18px;
+      cursor: pointer;
+      border: 1px solid #fff;
+      background-color: transparent; /* Прозрачный фон по умолчанию */
+      color: white; /* Белый цвет текста */
+      margin: 0 5px; /* Увеличим немного отступ между кнопками */
+      border-radius: 5px; /* Округленные края */
+      position: relative;
+      top: 1px;
+      transition: background-color 0.3s ease; /* Плавный переход фона */
+      min-width: 120px; /* Зададим минимальную ширину для более квадратной формы */
+      text-align: center; /* Центрируем текст */
+    }
+    .tab-button.active {
+      background-color: #00ffff; /* Другой фон при активации (голубой) */
+      color: #000000; /* Черный цвет текста при активации */
+      border-color: #00ffff; /* Цвет границы при активации */
+      z-index: 1;
+    }
+    .tab-button:hover {
+      background-color: rgba(0, 255, 255, 0.2); /* Небольшое изменение фона при наведении */
+    }
+    .tab-button:active {
+      transform: scale(1); /* Убираем увеличение при нажатии */
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background-color: #00026c;
+      color: white;
+      text-align: left;
+      border-top: none; /* Убираем верхнюю границу контента */
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .styled-button {
+      background: linear-gradient(to right, #4CAF50, #81C784);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 15px;
+      transition: transform 0.2s ease-in-out; /* Плавная анимация */
+    }
+    .styled-button:hover {
+      transform: scale(1.05); /* Небольшое увеличение при наведении для кнопок стоимости */
+    }
+    .styled-button:active {
+      transform: scale(1); /* Убираем увеличение при нажатии для кнопок стоимости */
+    }
+    .choose-plan-container { /* Новый класс */
+      padding-top: 50px; /* Отступ, равный или чуть больше высоты фиксированной панели */
+      text-align: center; /* Центрируем заголовок */
+    }
+
+    /* Медиазапрос для маленьких экранов (смартфонов) */
+    @media (max-width: 600px) {
+      .tariff-tabs .tab-button {
+        padding: 12px 20px; /* Уменьшаем отступы на маленьких экранах */
+        font-size: 16px;
+        margin: 0 3px; /* Уменьшаем отступ между кнопками */
+        min-width: 100px; /* Ещё немного уменьшим минимальную ширину */
+      }
+      .styled-button {
+        padding: 8px 20px; /* Уменьшаем отступы для кнопок стоимости */
+        font-size: 14px; /* Можно уменьшить шрифт кнопок стоимости */
+        margin: 10px; /* Уменьшаем отступы кнопок стоимости */
+      }
+    }
   </style>
 </head>
 <body>
@@ -240,171 +300,25 @@
       <p>• Принимайте точные решения</p>
     </div>
 
+    <div class="video-section">
+      <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+    </div>
+  </div>
+
   <div class="container">
     <h2 style="text-align: center;">Готовы начать работу с iAgroInnApp?</h2>
     <p style="text-align: center;">Свяжитесь с человеком, от которого вы получили ссылку, чтобы оформить доступ</p>
   </div>
   
-   <div class="white-section">
-        <h2 style="text-align: center;">Выберите план</h2>
-        <div class="slider-dots" id="tariff-dots">
-            <span onclick="scrollToCard(0)" class="active"></span>
-            <span onclick="scrollToCard(1)"></span>
-            <span onclick="scrollToCard(2)"></span>
-        </div>
-        <div class="tariff-slider-container" id="tariff-slider">
-            <div class="tariff-card">
-      <h3>AgroInn Start <span style="color: green; font-weight: bold;">(Пробная версия)</span></h3>
+  <div class="white-section" id="choose-plan-section">
+    <h2>Выберите план</h2>
+   </div>
+  
+  <div class="container">
+      <h2 style="text-align: center;">План №1</h2>  
+      <h3 style="text-align: center;">AgroInn Start <span style="color: green; font-weight: bold;">(Пробная версия)</span></h3>
       <p>✅ Размещение одного поля на карте iAgroInnApp</p>
       <p>✅ Первичная агрооценка физического и химического состояния поля <span style="color: green;">на основе проверенных спутниковых данных</p>
-      <p>✅ Возможность добавления ваших новых почвенных данных на карту <span style="color: green;">с их профессиональной оценкой и интерпретацией</p>
-      <p>Стоимость:<p>
-      <h3>Бесплатно<h3>
-    </div>
-
-     <div class="tariff-card">
-      <h3>Агросоветник</h3>
-      <p>✅ Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив) <span style="color: green;">(чтобы точно выявить особенности почвы и давать рекомендации по каждому участку)</p>
-      <p>✅ Глубокая агрооценка физико-химического и, при наличии, биологического состояния сельхозугодий на основе всех доступных лабораторных и спутниковых данных<span style="color: green;">(реализуется в первый год)</span></p>
-      <p>✅ Разработка цифровой модели биогеографических и климатических особенностей территории <span style="color: green;">(реализуется в первый год)</span></p>
-      <p>✅ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
-      <p>✅ Возможность обновления почвенных и производственных данных <span style="color: green;">для улучшения рекомендаций по агротехнологиям</p>
-      <p>Стоимость за один участок:<p>
-      <button id="kazakhstan-btn-agrosovietnik" class="styled-button">Республика Казахстан</button>
-      <button id="russia-btn-agrosovietnik" class="styled-button">Российская Федерация</button>
-      <div id="info-block-agrosovietnik" style="display: none;">
-        <h3 id="info-title-agrosovietnik"></h3>
-        <p id="info-text-agrosovietnik"></p>
-      </div>
-    </div>
-     <!-- Объединённый JavaScript -->
-    <script>
-        // Универсальная функция для отображения информации
-       function showInfo(country, blockId) {
-    const infoBlock = document.getElementById(`info-block-${blockId}`);
-    const title = document.getElementById(`info-title-${blockId}`);
-    const text = document.getElementById(`info-text-${blockId}`);
-
-    if (country === 'kazakhstan') {
-        if (blockId === 'agrosovietnik') {
-            title.textContent = '12 500 тг в первый год';
-            text.textContent = '6 000 тг со второго года';
-        } else if (blockId === 'partner') {
-            title.textContent = 'от 37 000 тг в первый год';
-            text.textContent = 'от 30 000 тг со второго года';
-        }
-    } else if (country === 'russia') {
-        if (blockId === 'agrosovietnik') {
-            title.textContent = '2 500 руб в первый год';
-            text.textContent = '1 250 руб со второго года';
-        } else if (blockId === 'partner') {
-            title.textContent = '6 400 руб в первый год';
-            text.textContent = '5 100 руб со второго года';
-        }
-    }
-
-    infoBlock.style.display = 'block';
-}
-
-// Обработчики событий для всех кнопок
-document.getElementById('kazakhstan-btn-agrosovietnik').addEventListener('click', function () {
-    showInfo('kazakhstan', 'agrosovietnik');
-});
-
-document.getElementById('russia-btn-agrosovietnik').addEventListener('click', function () {
-    showInfo('russia', 'agrosovietnik');
-});
-
-document.getElementById('kazakhstan-btn-partner').addEventListener('click', function () {
-    showInfo('kazakhstan', 'partner');
-});
-
-document.getElementById('russia-btn-partner').addEventListener('click', function () {
-    showInfo('russia', 'partner');
-});
-    </script>
-</body>
-</html>
-        </div>
-       <div class="tariff-card">
-      <h3>AgroInn Partner</h3>
-      <p>✅ Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив) <span style="color: green;">(чтобы точно выявить особенности почвы и давать рекомендации по каждому участку)</p>
-      <p>✅ Разработка цифровой модели биогеографических и климатических особенностей территории <span style="color: green;">(реализуется в первый год)</span></p>
-      <p>✅ Проведение полного анализа физического, химического и биологического состояния почв <span style="color: green;">в первый и третий годы</p>
-      <p>✅ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
-      <p>✅ Возможность обновления почвенных и производственных данных <span style="color: green;">для улучшения рекомендаций по агротехнологиям</p>
-      <p>✅ <span style="color: green;">(На выбор)</span> Ежегодное проведение листовой диагностики <span style="color: green;">(с применением зольного метода)</span> для контроля питания, мониторинга усвоения элементов и корректировки планов</p>
-      <p>✅ <span style="color: green;">(На выбор)</span> Создание цифровой карты мелкозалегающих грунтовых вод <span style="color: green;">(на глубине до 2 м)</span> для оценки влияния на корневую зону, планирования дренажа и управления водным режимом</p>
-      <p>✅ Проведение ежегодной комплексной оценки плодородия, состояния и устойчивости пахотных почв <span style="color: green;">с учётом погодных условий и их отклонений от среднегодовых значений</p>
-      <p>Стоимость за один участок:<p>
-      <button id="kazakhstan-btn-partner" class="styled-button">Республика Казахстан</button>
-      <button id="russia-btn-partner" class="styled-button">Российская Федерация</button>
-      <div id="info-block-partner" style="display: none;">
-        <h3 id="info-title-partner"></h3>
-        <p id="info-text-partner"></p>
-      </div>
-    </div>
-  </div>
-     <script>
-        // Универсальная функция для отображения информации
-       function showInfo(country, blockId) {
-    const infoBlock = document.getElementById(`info-block-${blockId}`);
-    const title = document.getElementById(`info-title-${blockId}`);
-    const text = document.getElementById(`info-text-${blockId}`);
-
-    if (country === 'kazakhstan') {
-        if (blockId === 'agrosovietnik') {
-            title.textContent = '12 500 тг в первый год';
-            text.textContent = '6 000 тг со второго года';
-        } else if (blockId === 'partner') {
-            title.textContent = 'от 37 000 тг в первый год';
-            text.textContent = 'от 30 000 тг со второго года';
-        }
-    } else if (country === 'russia') {
-        if (blockId === 'agrosovietnik') {
-            title.textContent = '2 500 руб в первый год';
-            text.textContent = '1 250 руб со второго года';
-        } else if (blockId === 'partner') {
-            title.textContent = '6 400 руб в первый год';
-            text.textContent = '5 100 руб со второго года';
-        }
-    }
-
-    infoBlock.style.display = 'block';
-}
-
-// Обработчики событий для всех кнопок
-document.getElementById('kazakhstan-btn-agrosovietnik').addEventListener('click', function () {
-    showInfo('kazakhstan', 'agrosovietnik');
-});
-
-document.getElementById('russia-btn-agrosovietnik').addEventListener('click', function () {
-    showInfo('russia', 'agrosovietnik');
-});
-
-document.getElementById('kazakhstan-btn-partner').addEventListener('click', function () {
-    showInfo('kazakhstan', 'partner');
-});
-
-document.getElementById('russia-btn-partner').addEventListener('click', function () {
-    showInfo('russia', 'partner');
-});
-    </script>
-</body>
-</html>
-              
-  <div class="white-section">
-    <h2>Как это работает?</h2>
-  </div>
-
-  <div class="container">
-    <div id="work-start" class="tab-content active">
-      <h3>AgroInn Start</h3>
-      <h2>Шаг 1</h2>
-      <p>Предоставляете всю информацию которая у вас сейчас есть, включая: наличие техники, историю посевов, агрохимические анализы (если они есть). Чем больше данных, тем выше точность.</p>
-      <h2>Шаг 2</h2>
-      <p>Машина автоматически оценит физические, химические и биологические состояния почв с учетом климатических условий, культуры растений и ваших потребностей.</p>
-      <h2>Шаг 3</h2>
       <style>
         .legend {
           font-family: sans-serif;
@@ -434,7 +348,7 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
       </style>
 
       <div>
-        <p>Вы получаете интерпретацию в виде цветной карты, где:</p>
+        <p>✅ Результаты оценки визуализированы в форме цветной карты, где:</p>
         <div class="legend">
           <div class="legend-item">
             <div class="legend-color red"></div>
@@ -450,27 +364,237 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
           </div>
         </div>
       </div>
-
-      <h2>Шаг 4</h2>
-      <p>Искусственный интеллект и международный научный консорциум, включающий агрономов, почвоведов, агрохимиков, биологов, гидрологов и других специалистов из России, Казахстана и других стран, показывают, какие ограничения угрожают вашему урожаю и как их устранить.</p>
+      <p>✅ Возможность добавления ваших новых почвенных данных на карту <span style="color: green;">с их профессиональной оценкой и интерпретацией</p>
+      <p>Стоимость:<p>
+      <h3>Бесплатно<h3>
     </div>
 
-    <div id="work-agrosovietnik" class="tab-content">
-      <h3>Агросоветник</h3>
-      <p><b>Шаг 1:</b> Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив).</p>
-      <p><b>Шаг 2:</b> Глубокая агрооценка физико-химического состояния сельхозугодий.</p>
-      <p><b>Шаг 3:</b> Разработка цифровой модели биогеографических и климатических особенностей территории.</p>
-    </div>
+     <div class="container">
+      <h2 style="text-align: center;">План №2</h2>
+      <h3 style="text-align: center;">Агросоветник</h3>
+      <p>✅ Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив) <span style="color: green;">(чтобы точно выявить особенности почвы и давать рекомендации по каждому участку)</p>
+      <p>✅ Разработка цифровой модели биогеографических и климатических особенностей территории <span style="color: green;">(реализуется в первый год)</span></p>
+      <p>✅ Глубокая агрооценка физико-химического и, при наличии, биологического состояния сельхозугодий на основе всех доступных лабораторных и спутниковых данных<span style="color: green;">(реализуется в первый год)</span></p>
+      <style>
+        .legend {
+          font-family: sans-serif;
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 8px;
+        }
 
-    <div id="work-partner" class="tab-content">
-      <h3>AgroInn Partner</h3>
-      <p><b>Шаг 1:</b> Картография любого количества полей с делением на участки.</p>
-      <p><b>Шаг 2:</b> Оценка, интерпретация и интеграция новых почвенных данных в карту.</p>
-      <p><b>Шаг 3:</b> Проведение ежегодной комплексной оценки плодородия, состояния и устойчивости почв.</p>
+        .legend-item {
+          display: flex;
+          align-items: center;
+        }
+
+        .legend-color {
+          width: 16px;
+          height: 16px;
+          border-radius: 3px;
+          margin-right: 8px;
+          margin-left: 16px;
+          flex-shrink: 0;
+        }
+
+        .red { background-color: #fd514b; }
+        .yellow { background-color: #fbfa03; }
+        .green { background-color: #339969; }
+      </style>
+
+      <div>
+        <p>✅ Результаты оценки визуализированы в форме цветной карты, где:</p>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color red"></div>
+            <div>красный цвет — критичная ситуация</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color yellow"></div>
+            <div>жёлтый цвет — требует внимания</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color green"></div>
+            <div>зелёный цвет — всё хорошо</div>
+          </div>
+        </div>
+      </div>
+      <p>✅ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
+      <p>✅ Возможность обновления почвенных и производственных данных <span style="color: green;">для улучшения рекомендаций по агротехнологиям</p>
+      <p>Стоимость за один участок:<p>
+      <button id="kazakhstan-btn-agrosovietnik" class="styled-button">Республика Казахстан</button>
+      <button id="russia-btn-agrosovietnik" class="styled-button">Российская Федерация</button>
+      <div id="info-block-agrosovietnik" style="display: none;">
+        <h3 id="info-title-agrosovietnik"></h3>
+        <p id="info-text-agrosovietnik"></p>
+      </div>
+    </div>
+     <!-- Объединённый JavaScript -->
+    <script>
+        // Универсальная функция для отображения информации
+       function showInfo(country, blockId) {
+    const infoBlock = document.getElementById(`info-block-${blockId}`);
+    const title = document.getElementById(`info-title-${blockId}`);
+    const text = document.getElementById(`info-text-${blockId}`);
+
+    if (country === 'kazakhstan') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '12 500 тг в первый год';
+            text.textContent = '6 000 тг со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = '4-х летний контракт\n от 37 000 тг в первый год';
+            text.textContent = 'от 30 000 тг со второго года';
+        }
+    } else if (country === 'russia') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '2 500 руб в первый год';
+            text.textContent = '1 250 руб со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = '4-х летний контракт\n от 6 400 руб в первый год';
+            text.textContent = 'от 5 100 руб со второго года';
+        }
+    }
+
+    infoBlock.style.display = 'block';
+}
+
+// Обработчики событий для всех кнопок
+document.getElementById('kazakhstan-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('kazakhstan', 'agrosovietnik');
+});
+
+document.getElementById('russia-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('russia', 'agrosovietnik');
+});
+
+document.getElementById('kazakhstan-btn-partner').addEventListener('click', function () {
+    showInfo('kazakhstan', 'partner');
+});
+
+document.getElementById('russia-btn-partner').addEventListener('click', function () {
+    showInfo('russia', 'partner');
+});
+    </script>
+</body>
+</html>
+        </div>
+      <div class="container">
+      <h2 style="text-align: center;">План №3</h2>
+      <h3 style="text-align: center;">AgroInn Partner</h3>
+      <p>✅ Картографирование полей с делением на участки ~25 га (богара) и ~5 га (полив) <span style="color: green;">(чтобы точно выявить особенности почвы и давать рекомендации по каждому участку)</p>
+      <p>✅ Разработка цифровой модели биогеографических и климатических особенностей территории <span style="color: green;">(реализуется в первый год)</span></p>
+      <p>✅ Проведение полного анализа физического, химического и биологического состояния почв <span style="color: green;">в первый и третий годы</p>
+       <style>
+        .legend {
+          font-family: sans-serif;
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 8px;
+        }
+
+        .legend-item {
+          display: flex;
+          align-items: center;
+        }
+
+        .legend-color {
+          width: 16px;
+          height: 16px;
+          border-radius: 3px;
+          margin-right: 8px;
+          margin-left: 16px;
+          flex-shrink: 0;
+        }
+
+        .red { background-color: #fd514b; }
+        .yellow { background-color: #fbfa03; }
+        .green { background-color: #339969; }
+      </style>
+
+      <div>
+        <p>✅ Результаты оценки визуализированы в форме цветной карты, где:</p>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color red"></div>
+            <div>красный цвет — критичная ситуация</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color yellow"></div>
+            <div>жёлтый цвет — требует внимания</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color green"></div>
+            <div>зелёный цвет — всё хорошо</div>
+          </div>
+        </div>
+      </div>
+      <p>✅ Пошаговые рекомендации <span style="color: green;">(весна, лето, осень, зима)</span></p>
+      <p>✅ Возможность обновления почвенных и производственных данных <span style="color: green;">для улучшения рекомендаций по агротехнологиям</p>
+      <p>✅ <span style="color: green;">(На выбор)</span> Ежегодное проведение листовой диагностики <span style="color: green;">(с применением зольного метода)</span> для контроля питания, мониторинга усвоения элементов и корректировки планов</p>
+      <p>✅ <span style="color: green;">(На выбор)</span> Создание цифровой карты мелкозалегающих грунтовых вод <span style="color: green;">(на глубине до 2 м)</span> для оценки влияния на корневую зону, планирования дренажа и управления водным режимом</p>
+      <p>✅ Проведение ежегодной комплексной оценки плодородия, состояния и устойчивости пахотных почв <span style="color: green;">с учётом погодных условий и их отклонений от среднегодовых значений</p>
+      <p>Стоимость за один участок:<p>
+      <button id="kazakhstan-btn-partner" class="styled-button">Республика Казахстан</button>
+      <button id="russia-btn-partner" class="styled-button">Российская Федерация</button>
+      <div id="info-block-partner" style="display: none;">
+        <h3 id="info-title-partner"></h3>
+        <p id="info-text-partner"></p>
+      </div>
     </div>
   </div>
+     <script>
+        // Универсальная функция для отображения информации
+       function showInfo(country, blockId) {
+    const infoBlock = document.getElementById(`info-block-${blockId}`);
+    const title = document.getElementById(`info-title-${blockId}`);
+    const text = document.getElementById(`info-text-${blockId}`);
 
-  <script>
+    if (country === 'kazakhstan') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '12 500 тг в первый год';
+            text.textContent = '6 000 тг со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = '4-х летний контракт\n от 37 000 тг в первый год';
+            text.textContent = 'от 30 000 тг со второго года';
+        }
+    } else if (country === 'russia') {
+        if (blockId === 'agrosovietnik') {
+            title.textContent = '2 500 руб в первый год';
+            text.textContent = '1 250 руб со второго года';
+        } else if (blockId === 'partner') {
+            title.textContent = '4-х летний контракт\n от 6 400 руб в первый год';
+            text.textContent = 'от 5 100 руб со второго года';
+        }
+    }
+
+    infoBlock.style.display = 'block';
+}
+
+// Обработчики событий для всех кнопок
+document.getElementById('kazakhstan-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('kazakhstan', 'agrosovietnik');
+});
+
+document.getElementById('russia-btn-agrosovietnik').addEventListener('click', function () {
+    showInfo('russia', 'agrosovietnik');
+});
+
+document.getElementById('kazakhstan-btn-partner').addEventListener('click', function () {
+    showInfo('kazakhstan', 'partner');
+});
+
+document.getElementById('russia-btn-partner').addEventListener('click', function () {
+    showInfo('russia', 'partner');
+});
+    </script>
+</body>
+</html>
+              
+ <script>
     function switchTabs(tabName, event) {
         event.preventDefault();
       event.stopPropagation();
@@ -491,21 +615,23 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
       buttons.forEach(button => button.classList.add('active'));
     }
 
-    window.onscroll = function() {
-      const tariffTabs = document.getElementById('tariffTabs');
-      const choosePlanSection = document.getElementById('choose-plan-section');
-      const sticky = choosePlanSection.offsetTop;
+   window.onscroll = function() {
+    const tariffTabs = document.getElementById('tariffTabs');
+    const choosePlanSection = document.getElementById('choose-plan-section');
+    const sticky = choosePlanSection.offsetTop;
 
-      if (window.pageYOffset >= sticky) {
-        tariffTabs.classList.add('fixed');
-      } else {
-        tariffTabs.classList.remove('fixed');
-      }
-    };
+    if (window.pageYOffset >= sticky) {
+      tariffTabs.classList.add('fixed');
+    } else {
+      tariffTabs.classList.remove('fixed');
+    }
+  };
   </script>
     
   <div class="white-section">
-    <h2 style="text-align: center;">Цифровой сервис, который помогает выявлять невидимые почвенные ограничения и предотвращать потери урожая</h2>
+    <h2 style="text-align: center;">Персональный цифровой агроном-почвовед:</h2>
+     <h3 style="text-align: center;"> - выявляет невидимые почвенные ограничения</h3>
+     <h3 style="text-align: center;"> - предотвращает потери урожая</h3>
     <p style="text-align: center;">Сделайте вашу почву продуктивнее, устраняя причины низкой урожайности</p>
   </div>
 
@@ -518,31 +644,6 @@ document.getElementById('russia-btn-partner').addEventListener('click', function
     <p class="agreement-text">
       Нажимая на кнопку, я принимаю <a href="OFFERI.html">условия соглашения</a>
     </p>
-  </div>
-
-  <div class="white-section">
-    <h2>Что вы получаете?</h2>
-  </div>
-
-  <div class="container">
-    <div class="checklist">
-      <div class="checklist-item">
-        <div class="checklist-title">✔ Защиту урожая</div>
-        <div class="checklist-text">от скрытых потерь</div>
-      </div>
-      <div class="checklist-item">
-        <div class="checklist-title">✔ Пошаговые рекомендации</div>
-        <div class="checklist-text">для всех сезонов (весна, лето, осень, зима) с учетом долгосрочных планов</div>
-      </div>
-      <div class="checklist-item">
-        <div class="checklist-title">✔ Новые знания</div>
-        <div class="checklist-text">и доступные инструменты, как повысить урожайность без лишних затрат, используя то, что у вас есть</div>
-      </div>
-      <div class="checklist-item">
-        <div class="checklist-title">✔ Понимание потенциала</div>
-        <div class="checklist-text">каждого участка вашей земли</div>
-      </div>
-    </div>
   </div>
 
   <div class="white-section">
