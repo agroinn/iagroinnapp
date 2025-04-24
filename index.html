@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head> {
-  margin: 0;
+<head> 
+ margin: 0;
             font-family: Helvetica, sans-serif;
             background-color: #00026c;
             color: white;
@@ -87,9 +87,10 @@
         }
 
         /* Стили для слайдера тарифных планов */
-        .tariff-slider-container {
+        .tariff-slider-wrapper {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
+            scroll-snap-type: x mandatory;
             display: flex;
             gap: 20px;
             padding: 20px;
@@ -105,6 +106,7 @@
             min-width: 300px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease-in-out;
+            scroll-snap-align: start;
         }
 
         .tariff-card:hover {
@@ -203,6 +205,7 @@
             color: #00ffff;
             margin-bottom: 5px;
         }
+   }
 </style>
 </head>
 <body>
