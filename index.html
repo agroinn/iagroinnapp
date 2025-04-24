@@ -105,22 +105,27 @@
     }
       /* Стили для слайдера тарифных планов */
         .tariff-slider-container {
-           display: flex; /* Устанавливаем Flexbox */
-        justify-content: space-between; /* Распределяем карточки равномерно */
+          display: flex; /* Устанавливаем Flexbox */
         gap: 20px; /* Расстояние между карточками */
-        flex-wrap: wrap; /* Позволяем перенос строк, если экран маленький */
+        overflow-x: auto; /* Горизонтальная прокрутка */
+        scroll-snap-type: x mandatory; /* Автоматическая фиксация карточек при прокрутке */
+        -webkit-overflow-scrolling: touch; /* Плавная прокрутка для iOS */
+        padding: 20px 0;
     }
+
     .tariff-card {
-        flex: 1 1 calc(33.333% - 20px); /* Каждая карточка занимает 1/3 ширины */
+        flex: 0 0 80%; /* Каждая карточка занимает 80% ширины контейнера */
         background-color: #191970;
         color: white;
         border-radius: 10px;
         padding: 20px;
         text-align: center;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        margin: 10px 0;
-        }
-
+        scroll-snap-align: center; /* Центрирование карточки при остановке */
+    }
+    .tariff-card h2, .tariff-card h3 {
+        margin-bottom: 10px;
+ }
         .tariff-card:hover {
             transform: scale(1.03);
         }
@@ -251,7 +256,55 @@
     <h2 style="text-align: center;">Готовы начать работу с iAgroInnApp?</h2>
     <p style="text-align: center;">Свяжитесь с человеком, от которого вы получили ссылку, чтобы оформить доступ</p>
   </div>
-  
+  <body>
+  <script>
+    // Пример нового JavaScript-кода
+    const slider = document.querySelector('.tariff-slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // Скорость прокрутки
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+  <header class="logo">
+    <img src="Дизайн без названия.png" alt="Логотип AgroInn" width="220">
+    <div class="language-switch">
+      <button onclick="location.href='index.html'">Rus</button>
+      <button onclick="location.href='iAgroInnApp Kaz.html'">Kaz</button>
+    </div>
+  </header>
+</body>
   <div class="white-section" id="choose-plan-section">
     <h2>Выберите план</h2>
    <div class="slider-dots" id="tariff-dots">
