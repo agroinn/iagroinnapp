@@ -318,7 +318,7 @@
            <h3 style="text-align: center;">Стоимость за один участок:</p>
           <div style="text-align: center; margin-bottom: 20px;">
   <div style="font-size: 2.5em; font-weight: bold;">2 500 руб</div>
-  <div style="font-size: 1.5em; font-weight: bold; color: #555;">12 500 тг</div>
+  <div style="font-size: 2.5em; font-weight: bold;">12 500 тг</div>
   <div style="font-size: 0.9em; color: #888;">в первый год</div>
 </div>
         </div>
@@ -352,10 +352,12 @@
             <p>✅ <span style="color: green;">(На выбор)</span> Создание цифровой карты мелкозалегающих грунтовых вод <span style="color: green;">(на глубине до 2 м)</span> для оценки влияния на корневую зону, планирования дренажа и управления водным режимом</p>
             <p>✅ Проведение ежегодной комплексной оценки плодородия, состояния и устойчивости пахотных почв <span style="color: green;">с учётом погодных условий и их отклонений от среднегодовых значений</span></p>
             <h3 style="text-align: center;">Стоимость за один участок:</p>
-           iv id="info-block-partner" style="display: none;">
-                <h3 id="info-title-partner"></h3>
-                <p id="info-text-partner"></p>
-            </div>
+         div style="text-align: center; margin-bottom: 20px;">
+  <div style="font-size: 1.5em; color: #bbb;">4-х летний контракт</div>
+  <div style="font-size: 2.5em; font-weight: bold;">6 400 руб</div>
+  <div style="font-size: 2.5em; font-weight: bold;">37 000 тг</div>
+  <div style="font-size: 0.9em; color: #888;">в первый год</div>
+</div>
         </div>
     </div>
 </div>
@@ -366,30 +368,7 @@
         </div>
 </div>
      <script>
-        // Универсальная функция для отображения информации
-       function showInfo(country, blockId) {
-    const infoBlock = document.getElementById(`info-block-${blockId}`);
-    const title = document.getElementById(`info-title-${blockId}`);
-    const text = document.getElementById(`info-text-${blockId}`);
-
-    if (country === 'kazakhstan') {
-        if (blockId === 'agrosovietnik') {
-            title.textContent = '12 500 тг в первый год';
-            text.textContent = '6 000 тг со второго года';
-        } else if (blockId === 'partner') {
-            title.textContent = '4-х летний контракт\n от 37 000 тг в первый год';
-            text.textContent = 'от 30 000 тг со второго года';
-        }
-    } else if (country === 'russia') {
-        if (blockId === 'agrosovietnik') {
-            title.textContent = '2 500 руб в первый год';
-            text.textContent = '1 250 руб со второго года';
-        } else if (blockId === 'partner') {
-            title.textContent = '4-х летний контракт\n от 6 400 руб в первый год';
-            text.textContent = 'от 5 100 руб со второго года';
-        }
-    }
-
+    
     infoBlock.style.display = 'block';
 }
 
