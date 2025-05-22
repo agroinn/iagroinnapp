@@ -143,23 +143,26 @@
   }
       /* ПК-стиль: все три плана в одну строку, аккуратно распределены */
 @media (min-width: 900px) {
-  .plans-container {
+  .tariff-slider-container {
     display: flex;
-    justify-content: space-between; /* или space-around */
-    gap: 24px; /* расстояние между блоками */
+    flex-direction: row;
+    justify-content: center;
     align-items: stretch;
+    overflow-x: visible; /* Убираем горизонтальный скролл */
+    gap: 24px;
+    padding: 20px 0;
+    scroll-snap-type: none;
   }
-  .plan {
+  .tariff-card {
     flex: 1 1 0;
     min-width: 0;
+    max-width: 350px; /* Ограничьте максимальную ширину, если нужно */
+    width: 100%;
+    margin: 0;
     box-sizing: border-box;
-    /* Дополнительно — выравнивание, скругление, фон:
-    padding: 24px;
-    border-radius: 12px;
-    background: #f9f9f9;
-    */
+    scroll-snap-align: unset;
   }
-        }
+}
            .tariff-card h3 {
             text-align: center;
             margin-bottom: 15px;
