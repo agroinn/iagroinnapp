@@ -141,6 +141,25 @@
     box-sizing: border-box;
     scroll-snap-align: unset;
   }
+      /* ПК-стиль: все три плана в одну строку, аккуратно распределены */
+@media (min-width: 900px) {
+  .plans-container {
+    display: flex;
+    justify-content: space-between; /* или space-around */
+    gap: 24px; /* расстояние между блоками */
+    align-items: stretch;
+  }
+  .plan {
+    flex: 1 1 0;
+    min-width: 0;
+    box-sizing: border-box;
+    /* Дополнительно — выравнивание, скругление, фон:
+    padding: 24px;
+    border-radius: 12px;
+    background: #f9f9f9;
+    */
+  }
+}
         }
            .tariff-card h3 {
             text-align: center;
