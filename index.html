@@ -263,6 +263,75 @@
     .tariff-card {
         flex: 1 1 100%;
       }
+            .trial-form-section {
+  max-width: 420px;
+  margin: 40px auto;
+  background: white;
+  color: #00026c;
+  border-radius: 14px;
+  padding: 24px 18px 18px 18px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.trial-form-section h2 {
+  text-align: center;
+  color: #00026c;
+  margin-bottom: 18px;
+}
+
+.trial-form-section form label {
+  display: block;
+  margin-bottom: 4px;
+  margin-top: 10px;
+  font-size: 0.98em;
+  font-weight: 500;
+}
+
+.trial-form-section form input[type="text"],
+.trial-form-section form input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #b7b7d2;
+  border-radius: 7px;
+  margin-bottom: 14px;
+  font-size: 1em;
+  box-sizing: border-box;
+  background: #f6f9ff;
+  color: #00026c;
+  transition: border-color 0.2s;
+}
+
+.trial-form-section form input:focus {
+  outline: none;
+  border-color: #00bfae;
+  background: #eafffa;
+}
+
+.trial-form-section .styled-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 0;
+  font-size: 1em;
+}
+
+@media (max-width: 600px) {
+  .trial-form-section {
+    max-width: 98vw;
+    margin: 20px 1vw;
+    padding: 14px 6vw 12px 6vw;
+  }
+  .trial-form-section h2 {
+    font-size: 1.2em;
+  }
+  .trial-form-section form label {
+    font-size: 0.97em;
+  }
+  .trial-form-section .styled-button {
+    font-size: 1em;
+    padding: 11px 0;
+  }
+}
     }
   </style>
 </head>
@@ -289,22 +358,22 @@
     </div>
   </div>
 
-  <div class="white-section" style="max-width: 420px; margin: 40px auto;">
-  <h2 style="text-align: center;">Получите пробную версию</h2>
-  <form action="https://formspree.io/f/movdzebj">
+  <div class="white-section trial-form-section">
+  <h2>Получите пробную версию</h2>
+  <form action="https://formspree.io/f/movdzebj" method="POST">
     <label for="company">Название компании*</label>
-    <input type="text" id="company" name="Компания" required style="width:100%;padding:8px;margin-bottom:12px;">
+    <input type="text" id="company" name="Компания" required>
 
     <label for="phone">Номер телефона*</label>
-    <input type="tel" id="phone" name="Телефон" required style="width:100%;padding:8px;margin-bottom:12px;">
+    <input type="tel" id="phone" name="Телефон" required>
 
     <label for="kadnum">Кадастровый номер*</label>
-    <input type="text" id="kadnum" name="Кадастровый номер" required style="width:100%;padding:8px;margin-bottom:16px;">
+    <input type="text" id="kadnum" name="Кадастровый номер" required>
 
-     <label for="kadnum">Страна*</label>
-    <input type="text" id="kadnum" name="Кадастровый номер" required style="width:100%;padding:8px;margin-bottom:16px;">
+    <label for="country">Страна*</label>
+    <input type="text" id="country" name="Страна" required>
 
-    <button type="submit" class="styled-button" style="width:100%;">Отправить заявку</button>
+    <button type="submit" class="styled-button">Отправить заявку</button>
   </form>
 </div>
 
